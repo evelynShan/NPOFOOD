@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>Title</title>
+
+    <!--引入Bootstrap--->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!--引入js--->
+    <script type="text/javascript" src="js/javascriptHome.js"></script>
+    <script type="text/javascript" src="js/jqueryHome.js"></script>
+
+
+    <!--引入css--->
+
+    <link rel="stylesheet" type="text/css" href="css/Home.css" />
+
+    <!--引入three.js三维引擎-->
+    <script src="libs/three.js"></script>
+    <script src="libs/OrbitControls.js"></script>
+    <script src="libs/GLTFLoader.js"></script>
+    <script src="libs/DRACOLoader.js"></script>
+
+    <!--引入skrollr.js--->
+    <script src="libs/skrollr.js"></script>
+
+    <!--引入wheelScroll.js--->
+    <script src="libs/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="http://repo.bfw.wiki/bfwrepo/js/jquery.mousewheel.js"></script>
+
+    <meta http-equiv=”Page-Enter” content=”revealTrans(Duration=10.0,Transition=4)”>
+    <meta http-equiv=”Page-Exit” content=”revealTrans(Duration=10.0,Transition=4)”>
+</head>
+<body>
+
+<!---题头-->
+<div class="Banner" >
+    <!--- <img src="src/img/LOGO.png">--->
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <!---row-eq-height设置元素等高--->
+            <div class="row row-eq-height">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner1" href="HomePage.html">#N PO FOOD</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner2"href="Products.html">#WHAT'S NEW</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" id="dropdownProduct"
+                                data-toggle="dropdown" >
+                            #PRODUCTS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"style="background-color: rgba(0,0,0,0%);border: none;":>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details.html">.001</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details2.html">.002</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details3.html">.003</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details4.html">.004</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!---
+                    <a href="Details.html" id="Banner3">#PRODUCTS</a>
+                    --->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner4">#ABOUT</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="BackGround">
+    <div style="position:absolute; width: 100%; height: 100%">
+        <!--首页背景-->
+        <section class="backEnvironment">
+            <div id="bg1" data-0="display:block;background-position:0px 0px;" data-600="display:block;opacity:1;background-position:-10000px 0px;"data-650="block:none;opacity:0;"></div>
+        </section>
+        <!--过渡背景-->
+        <section class="backEnvironment">
+            <div id="bg2"data-0="display:none"data-550="display:block;opacity:0;" data-600="display:block;opacity:1;background-position:0px 0px;" data-650="display:block;opacity:1;background-position:-10000px 0px;"data-900="display:none;opacity:0;"></div>
+        </section>
+
+        <!--背景2--产品1-->
+        <section class="backEnvironment">
+            <div id="bg3"data-0="position:absolute;display:none"data-800="display:block;position:absolute;opacity:0;" data-900="display:block;position:absolute;opacity:1;" data-3000="display:block;position:absolute;display:block;opacity:1;"data-3150="display:none;position:absolute;display:none;opacity:0;"></div>
+        </section>
+        <!--背景2--产品2-->
+        <section class="backEnvironment">
+            <div id="bg4"data-0="position:absolute;display:none"data-3000="display:block;position:absolute;opacity:0;" data-3100="display:block;position:absolute;opacity:1;" data-4300="display:block;position:absolute;display:block;opacity:1;"data-5400="display:none;position:absolute;display:none;opacity:0;"></div>
+        </section>
+        <!--背景3--产品3-->
+        <section class="backEnvironment">
+            <div id="bg5"data-0="position:absolute;display:none"data-5300="display:block;position:absolute;opacity:0;" data-5400="display:block;position:absolute;opacity:1;" data-7900="display:block;position:absolute;display:block;opacity:1;"data-8000="display:none;position:absolute;display:none;opacity:0;"></div>
+        </section>
+        <!--背景3--产品4-->
+        <section class="backEnvironment">
+            <div id="bg6"data-0="position:absolute;display:none"data-7900="display:block;position:absolute;opacity:0;" data-8000="display:block;position:absolute;opacity:1;" data-9000="display:block;position:absolute;display:block;opacity:1;"data-10400="display:none;position:absolute;display:none;opacity:0;"></div>
+        </section>
+        <!-------
+        <section class="backEnvironment">
+            <div id="bg6"data-0="display:none" data-8000="display:block;opacity:0;"data-8050="display:block;opacity:1;background-position:0px 0px;" data-10000="display:block;opacity:1;background-position:0px 0px;"data-10050="display:none;opacity:0;"></div>
+        </section>
+        ----->
+    </div>
+
+</div>
+
+<div id="Canvas1">
+    <!---Scroll当前的高度--->
+    <!----
+    <div data-0="position:fixed"><p id="nowScrollNum">
+        1
+    </p>
+    </div>
+    -->
+    <!---Page1--->
+    <!---渐变-背景--->
+    <div data-1="opacity:1;display:block;"data-200="opacity:1;display:block;"data-350="opacity:0;display:none;">
+
+    <div class="NoteImage"style="position: fixed; display: flex;width: 100%;height: 100%;">
+        <div data-0="opacity:1;"data-1000="opacity:1;" style="transform: scale(120%);  left:38%;top:20%;">
+            <img src="src/img/HomePage/Page1/BackElementsGradient.png">
+        </div>
+    </div>
+    <!---嘴唇+LOGO--->
+
+    <div class="NoteImage"style="position: fixed; display: flex;width: 100%;height: 100%;">
+        <div data-0="opacity:1;"data-200="opacity:1;" style="transform: scale(70%);  left:40%;top:25%;">
+            <img id="lipsElements1" src="src/img/HomePage/Page1/Lips/Lips1.png"style="position: fixed;">
+            <img id="lipsElements2" src="src/img/HomePage/Page1/Lips/Lips2.png"style="position: fixed;">
+            <img id="lipsElements3" src="src/img/HomePage/Page1/Lips/Lips3.png"style="position: fixed;">
+            <img id="lipsElements4" src="src/img/HomePage/Page1/Lips/Lips4.png"style="position: fixed;">
+            <div class="Note"data-0="transform:scale(1%);opacity:0;"data-200="transform:scale(200%);opacity:1;">
+                <p style="position:relative;left:20%;top:40%;">N PO FOOD</p>
+            </div>
+        </div>
+    </div>
+    <!---介绍--->
+    <div class="NoteImage"style="display: flex;position: fixed;width: 100%;height: 100%;"data-0="opacity:0;display:none;transform:scale(10%);" data-51="opacity:1;display:block;transform:scale(10%);"data-200="opacity:1;display:block;transform:scale(100%);">
+        <div style="position: fixed; left:20%;top:60%;">
+            <div style="left: 0">
+                <img src="src/img/HomePage/Page1/Words_N%20Po.png">
+            </div>
+
+        </div>
+    </div>
+    <!---SCROLL介绍--->
+    <div class="NoteImage" id="scrollWords"style="display: flex;width: 100%;height: 100%;"data-0="opacity:1;"data-50="opacity:0;">
+        <div style="position: fixed; left:49%;top:70%;">
+            <div style="">
+            <div class='icon-scroll'><div/>
+            </div>
+        </div>
+            <div style="margin-left: -50%;margin-top: 10%;">
+                <p>
+                    SCROLL TO START
+            </p>
+            </div>
+
+    </div>
+    </div>
+    </div>
+</div>
+    <!---Page1-2过渡--->
+    <div style="" data-0="opacity:0;display:none;"data-200="opacity:1;display:block;"data-500="opacity:1;display:block;"data-600="opacity:0;display:none;">
+
+        <div style="position:fixed;display:block;width: 100%;top:70%">
+            <img src="src/img/HomePage/Page1-2/UnrealisedDown.png"style="position:relative;width: 100%;">
+        </div>
+        <div style="position:fixed;display:block;width: 100%;top:0%;"data-0="opacity:1;display:block;transform:translateY(-20%)"data-200="opacity:0;display:block;transform:translateY(-20%)"data-300="opacity:1;display:block;transform:translateY(-20%)"data-650="opacity:1;display:block;transform:translateY(120%);">
+            <img src="src/img/HomePage/Page1-2/UnrealisedUpper1.png"style="position:relative;width: 100%;">
+        </div>
+        <div style="position:fixed;display:block;width: 100%;top:0%;"data-0="opacity:0;display:block;transform:translateY(-20%)"data-200="opacity:0;display:block;transform:translateY(-20%)"data-300="opacity:1;display:block;transform:translateY(-20%)"data-650="opacity:1;display:block;transform:translateY(120%);">
+            <img src="src/img/HomePage/Page1-2/UnrealisedUpper2.png"style="position:relative;width: 100%;">
+        </div>
+        </div>
+
+    <!---弹出框--->
+    <div style="" data-0="opacity:0;display:none;"data-600="opacity:1;display:block;"data-800="opacity:1;display:block;"data-900="opacity:0;display:none;">
+        <div style="position:fixed;left: 20%;top: 40%">
+            <input type="button" id="openPopUp">
+        </div>
+        <!--产品1-->
+        <div class="productsPop" style="left: 60%;top:10%;"id="popWin1">
+                <input type="button" class="popUpButton"id="closePopWin1">
+                <img src="src/img/HomePage/Page1-2/PopUpFrameWork/Goods1.png" onclick="window.scrollTo(0,900);">
+        </div>
+        <!--产品2-->
+        <div class="productsPop" style="left: 30%;top:10%;"id="popWin2">
+            <input type="button" class="popUpButton"id="closePopWin2">
+            <img src="src/img/HomePage/Page1-2/PopUpFrameWork/Goods2.png"onclick="window.scrollTo(0,3100);">
+        </div>
+        <!--产品3-->
+        <div class="productsPop" style="left: 45%;top:50%;"id="popWin3">
+            <input type="button" class="popUpButton"id="closePopWin3">
+            <img src="src/img/HomePage/Page1-2/PopUpFrameWork/Goods3.png"onclick="window.scrollTo(0,5400);">
+        </div>
+        <!--产品4-->
+        <div class="productsPop" style="left: 75%;top:60%;"id="popWin4">
+            <input type="button" class="popUpButton"id="closePopWin4">
+            <img src="src/img/HomePage/Page1-2/PopUpFrameWork/Goods4.png"onclick="window.scrollTo(0,8000);">
+        </div>
+
+    </div>
+<div style="position:fixed;left:1%;top:5%;width: 10%;height: 10%;z-index: 100;"data-800="opacity:0;display:none"data-900="opacity:1;display:block"data-10300="opacity:1;display:block"data-10400="opacity:0;display:none">
+    <div class="row"style="display: flex">
+        <input type="button"id="backToAdver"onclick="window.scrollTo(0,800);">
+        <p STYLE=""id="BackAdverWord">BACK</p>
+    </div>
+
+</div>
+    <!---Product1--->
+<div style="position: fixed;" data-0="opacity:0;display:none;"data-800="opacity:1;display:block;"data-900="opacity:1;display:block;"data-3000="opacity:1;display:block;"data-3100="opacity:0;display:none;">
+<div class="row">
+    <div class="col-6"style="position: fixed;left: 10%;top:40%">
+    <div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-800="opacity:0;display:block;transform:translateX(50px);"data-900="opacity:1;display:block;transform:translateX(0px);"data-1000="opacity:1;display:block;transform:translateX(0px);"data-1100="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                STILL WORRIED ABOUT WEIGHING OVER 100?
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-1100="opacity:0;display:block;transform:translateX(50px);"data-1200="opacity:1;display:block;transform:translateX(0px);"data-1300="opacity:1;display:block;transform:translateX(0px);"data-1400="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                STILL WORRIED ABOUT EATING TOO MUCH AT EACH MEAL?
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-1400="opacity:0;display:block;transform:translateX(50px);"data-1500="opacity:1;display:block;transform:translateX(0px);"data-1600="opacity:1;display:block;transform:translateX(0px);"data-1700="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                N PO FOOD'S NEWEST PRODUCT WILL SAVE YOU TIME AND EFFORT
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-1700="opacity:0;display:block;transform:translateX(50px);"data-1800="opacity:1;display:block;transform:translateX(0px);"data-1900="opacity:1;display:block;transform:translateX(0px);"data-2000="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                PROPORTIONED NUTRIENTS AND CALCULATED CALORIES.
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-2000="opacity:0;display:block;transform:translateX(50px);"data-2100="opacity:1;display:block;transform:translateX(0px);"data-2200="opacity:1;display:block;transform:translateX(0px);"data-2300="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                SATIATING AND REJUVENATING WITHOUT THE NEED TO CONSUME FOOD.
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-2300="opacity:0;display:block;transform:translateX(50px);"data-2400="opacity:1;display:block;transform:translateX(0px);"data-2500="opacity:1;display:block;transform:translateX(0px);"data-2600="opacity:0;display:none;transform:translateX(-50px);">
+            <p>
+                SLIMMING FAST, NO MATTER WHAT YOUR BODY TYPE!
+            </p>
+        </div>
+        <div class="product1Words" style="z-index: 3;position: fixed;"data-2600="opacity:0;display:block;transform:translateX(50px);"data-2700="opacity:1;display:block;transform:translateX(0px);">
+        <!--
+            <div class="row">
+            <div class="col-2" style="">
+                <input type="button" class="productDetail" onclick="window.location.href='Product1Details.html'">
+            </div>
+            <div class="col-60">
+                <a href="Details.html">
+                    CLICK TO KNOW MORE
+                </a>
+            </div>
+        </div>
+        -->
+            <input type="button" class="productDetail" onclick="window.location.href='dDetails.html'">
+            <a href="Details.html" class="homeButton">
+                CLICK TO KNOW MORE
+            </a>
+
+        </div>
+
+    </div>
+
+
+    </div>
+    <div class="col-6"style="position: fixed;left: 50%;top: 10%">
+        <div style="" data-0="opacity:0;display:none"data-800="opacity:0;display:block"data-900="opacity:1;display:block"data-3000="opacity:1;display:block"data-3100="opacity:0;display:none">
+            <div style="z-index: 1;position: fixed">
+                <img src="src/img/HomePage/Products/Product1/cardBack.png">
+            </div>
+
+            <div style="z-index: 3;position: fixed"data-900="opacity:1;display:block"data-1150="opacity:0;display:none">
+                <img src="src/img/HomePage/Products/Product1/cardElem1.png">
+            </div>
+
+            <div style="z-index: 3;position: fixed;"data-1150="opacity:0;display:block;transform:translateX(50px);"data-1250="opacity:1;display:block;transform:translateX(0px);"data-1350="opacity:1;display:block;transform:translateX(0px);"data-1450="opacity:0;display:none;transform:translateX(-50px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem2.png">
+            </div>
+
+            <div style="z-index: 3;position: fixed;"data-1450="opacity:0;display:block;transform:translateX(50px);"data-1550="opacity:1;display:block;transform:translateX(0px);"data-1650="opacity:1;display:block;transform:translateX(0px);"data-1750="opacity:0;display:none;transform:translateX(-50px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem3.png">
+            </div>
+
+            <div style="z-index: 3;position: fixed;"data-1750="opacity:0;display:block;transform:translateX(50px);"data-1850="opacity:1;display:block;transform:translateX(0px);"data-1950="opacity:1;display:block;transform:translateX(0px);"data-2050="opacity:0;display:none;transform:translateX(-50px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem4.png">
+            </div>
+
+            <div style="z-index: 3;position: fixed;"data-2050="opacity:0;display:block;transform:translateX(50px);"data-2150="opacity:1;display:block;transform:translateX(0px);"data-2250="opacity:1;display:block;transform:translateX(0px);"data-2350="opacity:0;display:none;transform:translateX(-50px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem5.png">
+            </div>
+            <div style="z-index: 3;position: fixed;"data-2350="opacity:0;display:block;transform:translateX(50px);"data-2450="opacity:1;display:block;transform:translateX(0px);"data-2550="opacity:1;display:block;transform:translateX(0px);"data-2650="opacity:0;display:none;transform:translateX(-50px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem6.png">
+            </div>
+            <div style="z-index: 3;position: fixed;"data-2650="opacity:0;display:block;transform:translateX(50px);"data-2750="opacity:1;display:block;transform:translateX(0px);">
+                <img src="src/img/HomePage/Products/Product1/cardElem1.png">
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+    <!---Product2--->
+<div style="position: fixed;" data-0="opacity:0;display:none;"data-3000="opacity:1;display:block;"data-3100="opacity:1;display:block;"data-5100="opacity:1;display:block;"data-5300="opacity:0;display:none;">
+    <div class="row">
+        <!--图片--->
+        <div class="col-6"style="position: fixed">
+            <!--齿轮-->
+            <div>
+                <!--Geer1-->
+                <div class="product3Geer" style="left:10%;top:60%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(250deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer1.png"style="transform: scale(30%)">
+                </div>
+                <!--Geer2-->
+                <div class="product3Geer" style="left:15%;top:20%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(-350deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer2.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer3-->
+                <div class="product3Geer" style="left:20%;top:-10%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(200deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer3.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer4-->
+                <div class="product3Geer" style="left:-10%;top:10%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(-20deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer4.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer5-->
+                <div class="product3Geer" style="left:0%;top:-15%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(400deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer5.png"style="transform: scale(40%)">
+                </div>
+
+                <!--Geer6-->
+                <div class="product3Geer" style="left:-5%;top:15%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(-200deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer6.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer7-->
+                <div class="product3Geer" style="left:10%;top:15%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(250deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer7.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer8-->
+                <div class="product3Geer" style="left:-10%;top:-30%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(-350deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer8.png"style="transform: scale(30%)">
+                </div>
+
+                <!--Geer9-->
+                <div class="product3Geer" style="left:15%;top:18%;z-index:1" data-3000="opacity:0;display:block;transform:rotate(0deg)"data-3100="opacity:1;display:block;transform:rotate(0deg)"data-4900="opacity:1;display:block;transform:rotate(150deg)">
+                    <img src="src/img/HomePage/Products/Product2/Geer/Geer9.png"style="transform: scale(30%)">
+                </div>
+
+            </div>
+            <!--钱--->
+            <div>
+                <!--Money1-->
+                <div class="product3Money" style="z-index:21" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                    <img src="src/img/HomePage/Products/Product2/Money/Money1.png"style="width: 100%">
+                </div>
+
+                <!--Money2-->
+                <div class="product3Money" style="z-index:0" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                    <img src="src/img/HomePage/Products/Product2/Money/Money2.png"style="width: 100%">
+                </div>
+
+                <!--Money3-->
+                <div class="product3Money" style="z-index:0" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                    <img src="src/img/HomePage/Products/Product2/Money/Money3.png"style="width: 100%">
+                </div>
+            </div>
+            <!--星星--->
+
+            <!--Star1-->
+            <div class="product3Money" style="z-index:0" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                <img src="src/img/HomePage/Products/Product2/Star/Star1.png"style="width: 100%">
+            </div>
+
+            <!--Star2-->
+            <div class="product3Money" style="z-index:4" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                <img src="src/img/HomePage/Products/Product2/Star/Star2.png"style="width: 100%">
+            </div>
+
+            <!--Star3-->
+            <div class="product3Money" style="z-index:20" data-3000="opacity:0;display:block;transform:translateY(-120%);"data-3100="opacity:1;display:block;transform:translateY(-120%);"data-4900="opacity:1;display:block;transform:translateY(10%);">
+                <img src="src/img/HomePage/Products/Product2/Star/Star3.png"style="width: 100%">
+            </div>
+        </div>
+        <!--文字--->
+        <div class="col-6">
+            <div>
+                <!--Word1-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-3000="opacity:0;display:block;transform:translateX(-50px);"data-3100="opacity:1;display:block;transform:translateX(0px);"data-3200="opacity:1;display:block;transform:translateX(0px);"data-3300="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        WORK HARD, WORK HARD, WORK HARD, ONLY HARD WORK WILL PAY OFF
+                    </p>
+                </div>
+                <!--Word2-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-3300="opacity:0;display:block;transform:translateX(-50px);"data-3400="opacity:1;display:block;transform:translateX(0px);"data-3500="opacity:1;display:block;transform:translateX(0px);"data-3600="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        IF YOU STOP, YOU RISK LOSING YOUR CHANCE!
+                    </p>
+                </div>
+                <!--Word3-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-3600="opacity:0;display:block;transform:translateX(-50px);"data-3700="opacity:1;display:block;transform:translateX(0px);"data-3800="opacity:1;display:block;transform:translateX(0px);"data-3900="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        N PO FOOD'S NEWEST PRODUCT ENABLE YOU
+                    </p>
+                    <p>
+                        TO EAT IN THE LEAST AMOUNT OF TIME!
+                    </p>
+                    <p>
+                        FOCUS ON DAILY TASKS
+                    </p>
+                </div>
+                <!--Word4-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-3900="opacity:0;display:block;transform:translateX(-50px);"data-4000="opacity:1;display:block;transform:translateX(0px);"data-4100="opacity:1;display:block;transform:translateX(0px);"data-4200="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        NO MORE INTERRUPTIONS TO YOUR SCHEDULE DUE TO PHYSICAL HUNGER
+                    </p>
+                </div>
+                <!--Word5-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-4200="opacity:0;display:block;transform:translateX(-50px);"data-4300="opacity:1;display:block;transform:translateX(0px);"data-4400="opacity:1;display:block;transform:translateX(0px);"data-4500="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        YOU CAN STAY FOCUSED ALL THE TIME!
+                    </p>
+                    <p>
+                        NO MORE DISTRACTIONS!
+                    </p>
+                </div>
+                <!--Word6-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-4500="opacity:0;display:block;transform:translateX(-50px);"data-4600="opacity:1;display:block;transform:translateX(0px);"data-4700="opacity:1;display:block;transform:translateX(0px);"data-4800="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        ACHIEVE MEANINGFUL GOALS IN LIFE!
+                    </p>
+                </div>
+                <!--按钮--->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-4800="opacity:0;display:block;transform:translateX(-50px);"data-4900="opacity:1;display:block;transform:translateX(0px);">
+                    <input type="button" class="productDetail" onclick="window.location.href='Details2.html'">
+                    <a href="Details2.html" class="homeButton">
+                        CLICK TO KNOW MORE
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!---Product3--->
+<div style="position: fixed;" data-0="opacity:0;display:none;"data-5300="opacity:1;display:block;"data-5400="opacity:1;display:block;"data-7900="opacity:1;display:block;"data-8000="opacity:0;display:none;">
+    <div class="row">
+        <div class="col-6">
+           <div style="position:fixed;top: 2%;left: 55%;transform: scale(40%);" data-5300="opacity:0;display:block"data-5400="opacity:1;display:block"data-7900="opacity:1;display:block"data-8000="opacity:0;display:none">
+               <img src="src/img/HomePage/Products/Product3/Tasteless.png">
+           </div>
+            <div style="position: fixed;left: 62%;top:20%;transform: scale(60%)">
+                <!--第一口-->
+                <div class="product3Wax"style="z-index:12"data-5400="opacity:1;display:block"data-5500="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite1.png">
+                </div>
+                <!--第二口-->
+                <div class="product3Wax"style="z-index:11"data-5600="opacity:1;display:block"data-5700="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite2.png">
+                </div>
+                <!--第三口-->
+                <div class="product3Wax"style="z-index:10"data-5900="opacity:1;display:block"data-6000="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite3.png">
+                </div>
+                <!--第四口-->
+                <div class="product3Wax"style="z-index:9"data-6100="opacity:1;display:block"data-6200="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite4.png">
+                </div>
+                <!--第五口-->
+                <div class="product3Wax"style="z-index:8"data-6400="opacity:1;display:block"data-6500="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite5.png">
+                </div>
+                <!--第六口-->
+                <div class="product3Wax"style="z-index:7"data-6600="opacity:1;display:block"data-6700="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite6.png">
+                </div>
+                <!--第七口-->
+                <div class="product3Wax"style="z-index:6"data-6900="opacity:1;display:block"data-7000="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite7.png">
+                </div>
+                <!--第八口-->
+                <div class="product3Wax"style="z-index:5"data-7100="opacity:1;display:block"data-7200="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite8.png">
+                </div>
+                <!--第九口-->
+                <div class="product3Wax"style="z-index:4"data-7300="opacity:1;display:block"data-7400="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite9.png">
+                </div>
+                <!--第十口-->
+                <div class="product3Wax"style="z-index:3"data-7500="opacity:1;display:block"data-7600="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite10.png">
+                </div>
+                <!--第十一口-->
+                <div class="product3Wax"style="z-index:2"data-7700="opacity:1;display:block"data-7800="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite11.png">
+                </div>
+                <!--第十二口-->
+                <div class="product3Wax"style="z-index:1"data-7900="opacity:1;display:block"data-8000="opacity:0;display:none">
+                    <img src="src/img/HomePage/Products/Product3/Bite12.png">
+                </div>
+
+            </div>
+            <div style="position: fixed;left: 45%;top: 5%;z-index: 20"data-5700="opacity:0;display:block;transform:scale(10%)"data-5800="opacity:1;display:block;transform:scale(10%)"data-8300="opacity:1;display:block;transform:scale(100%)"data-8400="opacity:0;display:block;transform:scale(80%)">
+                <img src="src/img/HomePage/Products/Product3/Bubble.png">
+            </div>
+        </div>
+        <div class="col-6">
+            <!--Word1-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-5300="opacity:0;display:block;transform:translateX(50px);"data-5400="opacity:1;display:block;transform:translateX(0px);"data-5500="opacity:1;display:block;transform:translateX(0px);"data-5600="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    EVEN WHEN YOU'RE FULL, EVEN WHEN YOU'RE ON A DIET
+                </p>
+            </div>
+            <!--Word2-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-5600="opacity:0;display:block;transform:translateX(50px);"data-5700="opacity:1;display:block;transform:translateX(0px);"data-5800="opacity:1;display:block;transform:translateX(0px);"data-5900="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    YOU CAN'T CONTROL YOUR DESIRE TO EAT
+                </p>
+            </div>
+            <!--Word3-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-5900="opacity:0;display:block;transform:translateX(50px);"data-6000="opacity:1;display:block;transform:translateX(0px);"data-6100="opacity:1;display:block;transform:translateX(0px);"data-6200="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    N PO FOOD'S NEWEST PRODUCT
+                </p>
+                <p>
+                  ALLOWS YOU TO ENJOY THE THRILL OF
+                </p>
+                <p>
+                   CHEWING WITHOUT THE WORRY OF CALORIE INTAKE
+                </p>
+            </div>
+            <!--Word4-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-6200="opacity:0;display:block;transform:translateX(50px);"data-6300="opacity:1;display:block;transform:translateX(0px);"data-6400="opacity:1;display:block;transform:translateX(0px);"data-6500="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    NOT ONLY IS IT AS CHEWY AS BUBBLE GUM
+                </p>
+            </div>
+            <!--Word5-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-6500="opacity:0;display:block;transform:translateX(50px);"data-6600="opacity:1;display:block;transform:translateX(0px);"data-6700="opacity:1;display:block;transform:translateX(0px);"data-6800="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    AND LIKE AN ABSORBENT SPONGE,
+                </p>
+                <p>
+                   IT GRADUALLY FILLS UP YOUR STOMACH
+                </p>
+            </div>
+            <!--Word6-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-6800="opacity:0;display:block;transform:translateX(50px);"data-6900="opacity:1;display:block;transform:translateX(0px);"data-7000="opacity:1;display:block;transform:translateX(0px);"data-7100="opacity:0;display:none;transform:translateX(-50px);">
+                <p>
+                    NO MORE ANXIETY! FEEL SAFE!
+                </p>
+                <p>
+                    NO MORE WORRYING ABOUT GAINING WEIGHT!
+                </p>
+            </div>
+
+            <!--Button-->
+            <div class="product3Words" style="z-index: 3;position: fixed;"data-7100="opacity:0;display:block;transform:translateX(50px);"data-7200="opacity:1;display:block;transform:translateX(0px);">
+                <input type="button" class="productDetail" onclick="window.location.href='Details3.html'">
+                <a href="Details3.html" class="homeButton">
+                    CLICK TO KNOW MORE
+                </a>
+
+            </div>
+
+        </div>
+        </div>
+
+</div>
+    <!---Product4--->
+
+<div style="position: fixed;" data-0="opacity:0;display:none;"data-7900="opacity:1;display:block;"data-8000="opacity:1;display:block;"data-10300="opacity:1;display:block;"data-10400="opacity:0;display:none;">
+    <div class="row">
+        <!--图片-->
+        <div class="col-6"style="position: fixed">
+            <!--蘑菇-->
+            <div>
+                <!--MushRoom_Left-->
+                <div class="product4Pics" style="position:fixed;left:15%;top:25%;z-index:5" data-7900="opacity:0;display:block;transform:translateX(0%);"data-8000="opacity:1;display:block;transform:translateX(0%);"data-9000="opacity:1;display:block;transform:translateX(-30%);"data-9500="opacity:0;display:block;transform:translateX(-40%);">
+                    <img src="src/img/HomePage/Products/Product4/MushRoom/Mushroom_Left.png"style="transform:scale(160%);">
+                </div>
+                <!--MushRoom_Left——Bottom-->
+                <div class="product4Pics" style="position:fixed;left:15%;top:25%;z-index:3" data-7900="opacity:0;display:block;transform:translateX(0%);"data-8000="opacity:1;display:block;transform:translateX(0%);"data-9000="opacity:1;display:block;transform:translateX(-30%);"data-9500="opacity:0;display:block;transform:translateX(-40%);">
+                    <img src="src/img/HomePage/Products/Product4/MushRoom/Mushroom_Left_Bottom.png"style="transform:scale(160%);">
+                </div>
+                <!--MushRoom_Right-->
+                <div class="product4Pics" style="position:fixed;left:15%;top:25%;z-index:4" data-7900="opacity:0;display:block;transform:translateX(0%);"data-8000="opacity:1;display:block;transform:translateX(0%);"data-9000="opacity:1;display:block;transform:translateX(30%);"data-9500="opacity:0;display:block;transform:translateX(40%);">
+                    <img src="src/img/HomePage/Products/Product4/MushRoom/Mushroom_Right.png"style="transform:scale(160%);">
+                </div>
+            </div>
+            <!--背景+Brain-->
+            <div style="position: fixed;left:15%;top: 10%;z-index: 2">
+                <!---
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.78 289.11"><defs><style>.cls-1{fill:none;stroke:#ff3f45;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;stroke-dasharray:6000;stroke-dashoffset:0;transform: scale(35%);}</style></defs><g id="图层_2" data-name="图层 2"><g id="Bite1_图像" data-name="Bite1 图像">
+                    <path  data-8800="stroke-dashoffset:6000;" data-10000="stroke-dashoffset:0;" class="cls-1" d="M243.38,287.61s-12.92-1.55-32-35.15S171,210.08,148.8,209.56,90.4,213.18,73.34,192s-2.58-33.08,8.79-46.52,42.9-22.74,56.33-16,41.87,20.16,18.09,40.32-13.43,23.77.52,22.74,38.76,1,50.65-6.2-4.65-6.21-12.4-8.79-19.13-14,20.15-5.17c18.09,3.1,15,24.81-5.16,30s-11.37,14.47,4.65,16,53.75-6.2,54.78-35.66-46.51-.52-18.09,9.3,42.9-15,52.72-43.93S285.25,48.31,236.15,99s9.82,54.78,23.77,35.66,40.32-64.6-5.17-84.76-82.17,1-77,26.87S194.8,131,209.27,141.34s-9.82,30-37.21-1.55S154,88.1,202.55,73.63s46.52-51.68-2.06-63S116.24,7.48,136.4,69,111.59,101.28,110,92s25.32-20.67,38.76-36.7,53.24-52.71-1-53.75S23.21,23.76,23.72,71.82,127.17,94.24,94,57.35,1.5,68.21,1.5,104.39s25.33,70.8,65.12,45,1-55.82-29.46-27.91"/></g></g>
+                </svg>-->
+                <!----
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.78 289.11"><defs><style>.cls-1{fill:none;stroke:#ff3f45;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;stroke-dasharray:6000;stroke-dashoffset:0;transform: scale(35%)}</style></defs><g id="图层_2" data-name="图层 2"><g id="Bite1_图像" data-name="Bite1 图像">
+                    <path data-8800="stroke-dashoffset:6000;" data-10000="stroke-dashoffset:0;"class="cls-1" d="M243.38,287.61s-12.92-1.55-32-35.15S171,210.08,148.8,209.56,90.4,213.18,73.34,192s-2.58-33.08,8.79-46.52,42.9-22.74,56.33-16,41.87,20.16,18.09,40.32-13.43,23.77.52,22.74,38.76,1,50.65-6.2-4.65-6.21-12.4-8.79-19.13-14,20.15-5.17c18.09,3.1,15,24.81-5.16,30s-11.37,14.47,4.65,16,53.75-6.2,54.78-35.66-46.51-.52-18.09,9.3,42.9-15,52.72-43.93S285.25,48.31,236.15,99s9.82,54.78,23.77,35.66,40.32-64.6-5.17-84.76-82.17,1-77,26.87S194.8,131,209.27,141.34s-9.82,30-37.21-1.55S154,88.1,202.55,73.63s46.52-51.68-2.06-63S116.24,7.48,136.4,69,111.59,101.28,110,92s25.32-20.67,38.76-36.7,53.24-52.71-1-53.75S23.21,23.76,23.72,71.82,127.17,94.24,94,57.35,1.5,68.21,1.5,104.39s25.33,70.8,65.12,45,1-55.82-29.46-27.91"/></g></g>
+                </svg>--->
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="500px" height="500px" viewBox="0 0 308 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Brain2</title>
+                    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"stroke-dasharray="6000";stroke-dashoffset="0";>
+                        <g id="Brain2" transform="translate(1.000000, 1.000000)" stroke="#FF3F45" stroke-width="3">
+                            <path data-8800="stroke-dashoffset:6000;" data-10000="stroke-dashoffset:0;" d="M242.38,286.61 C242.38,286.61 229.46,285.06 210.38,251.46 C191.3,217.86 170,209.08 147.8,208.56 C125.6,208.04 89.4,212.18 72.34,191 C55.28,169.82 69.76,157.92 81.13,144.48 C92.5,131.04 124.03,121.74 137.46,128.48 C150.89,135.22 179.33,148.64 155.55,168.8 C131.77,188.96 142.12,192.57 156.07,191.54 C170.02,190.51 194.83,192.54 206.72,185.34 C218.61,178.14 202.07,179.13 194.32,176.55 C186.57,173.97 175.19,162.55 214.47,171.38 C232.56,174.48 229.47,196.19 209.31,201.38 C189.15,206.57 197.94,215.85 213.96,217.38 C229.98,218.91 267.71,211.18 268.74,181.72 C269.77,152.26 222.23,181.2 250.65,191.02 C279.07,200.84 293.55,176.02 303.37,147.09 C313.19,118.16 284.25,47.31 235.15,98 C186.05,148.69 244.97,152.78 258.92,133.66 C272.87,114.54 299.24,69.06 253.75,48.9 C208.26,28.74 171.58,49.9 176.75,75.77 C181.92,101.64 193.8,130 208.27,140.34 C222.74,150.68 198.45,170.34 171.06,138.79 C143.67,107.24 153,87.1 201.55,72.63 C250.1,58.16 248.07,20.95 199.49,9.63 C150.91,-1.69 115.24,6.48 135.4,68 C155.56,129.52 110.59,100.28 109,91 C107.41,81.72 134.32,70.33 147.76,54.3 C161.2,38.27 201,1.59 146.76,0.55 C92.52,-0.49 22.21,22.76 22.72,70.82 C23.23,118.88 126.17,93.24 93,56.35 C59.83,19.46 0.5,67.21 0.5,103.39 C0.5,139.57 25.83,174.19 65.62,148.39 C105.41,122.59 66.62,92.57 36.16,120.48" id="路径"></path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div style="position: fixed;left:15%;top: 20%;transform: scale(200%);opacity: 0;z-index: 1"data-9000="opacity:0"data-10000="opacity:0.5">
+                <img src="src/img/HomePage/Products/Product4/GradientBack.png">
+            </div>
+            <!--花花-->
+            <div style="position: fixed;left:10%;top: 10%;z-index: 10">
+                <div style="position: fixed;left:0%;top: 100%;z-index: 10"data-9000="transform:translateY(0%)"data-10400="transform:translateY(-200%)">
+                    <img src="src/img/HomePage/Products/Product4/Flowers/Flower1.png">
+                </div>
+                <div style="position: fixed;left:0%;top: 100%;z-index: 9"data-9000="transform:translateY(0%)"data-10400="transform:translateY(-180%)">
+                    <img src="src/img/HomePage/Products/Product4/Flowers/Flower2.png">
+                </div>
+                <div style="position: fixed;left:0%;top: 100%;z-index: 8"data-9000="transform:translateY(0%)"data-10400="transform:translateY(-150%)">
+                    <img src="src/img/HomePage/Products/Product4/Flowers/Flower3.png">
+                </div>
+                <div style="position: fixed;left:0%;top: 100%;z-index: 10"data-9000="transform:translateY(0%)"data-10400="transform:translateY(-120%)">
+                    <img src="src/img/HomePage/Products/Product4/Flowers/Flower1.png">
+                </div>
+                <div style="position: fixed;left:0%;top: 100%;z-index: 8"data-9000="transform:translateY(0%)"data-10400="transform:translateY(-100%)">
+                    <img src="src/img/HomePage/Products/Product4/Flowers/Flower3.png">
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--文字-->
+        <div class="col-6">
+            <div>
+                <!--Word1-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-7900="opacity:0;display:block;transform:translateX(-50px);"data-8000="opacity:1;display:block;transform:translateX(0px);"data-8100="opacity:1;display:block;transform:translateX(0px);"data-8200="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        DON'T FEEL DOWN ANYMORE!
+                    </p>
+                </div>
+                <!--Word2-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-8200="opacity:0;display:block;transform:translateX(-50px);"data-8300="opacity:1;display:block;transform:translateX(0px);"data-8400="opacity:1;display:block;transform:translateX(0px);"data-8500="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        AND DON'T FEEL TIRED, SAD OR DISAPPOINTED!
+                    </p>
+                </div>
+                <!--Word3-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-8500="opacity:0;display:block;transform:translateX(-50px);"data-8600="opacity:1;display:block;transform:translateX(0px);"data-8700="opacity:1;display:block;transform:translateX(0px);"data-8900="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        N PO FOOD IS HERE
+                    </p>
+                    <p>
+                        TO HELP YOU GET YOUR DOPAMINE FLOWING!
+                    </p>
+                </div>
+                <!--Word4-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-8900="opacity:0;display:block;transform:translateX(-50px);"data-9000="opacity:1;display:block;transform:translateX(0px);"data-9100="opacity:1;display:block;transform:translateX(0px);"data-9200="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        TO MAKE YOU GENERATE JOY IN EVERY MOMENT
+                    </p>
+                </div>
+                <!--Word5-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-9200="opacity:0;display:block;transform:translateX(-50px);"data-9300="opacity:1;display:block;transform:translateX(0px);"data-9400="opacity:1;display:block;transform:translateX(0px);"data-9500="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        TO MAKE YOU FACE YOUR WORK,
+                    </p>
+                    <p>
+                        STUDIES, AND LIFE WITH A POSITIVE MINDSET!
+                    </p>
+                </div>
+                <!--Word6-->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-9500="opacity:0;display:block;transform:translateX(-50px);"data-9600="opacity:1;display:block;transform:translateX(0px);"data-9700="opacity:1;display:block;transform:translateX(0px);"data-9800="opacity:0;display:none;transform:translateX(50px);">
+                    <p>
+                        TO MAKE YOU FEEL PLEASED, EVEN IN THE FACE OF ANXIETY AND STRESS!
+                    </p>
+                </div>
+                <!--按钮--->
+                <div class="product2Words" style="z-index: 3;position: fixed;"data-9800="opacity:0;display:block;transform:translateX(-50px);"data-9900="opacity:1;display:block;transform:translateX(0px);">
+                    <input type="button" class="productDetail" onclick="window.location.href='Details4.html'">
+                    <a href="Details4.html" class="homeButton">
+                        CLICK TO KNOW MORE
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--介绍界面--->
+<div class="About">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 aboutClose">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 closeIcon">
+                <img src="src/img/Menu_Icon.png">
+            </div>
+            <div class="col-lg-10 col-md-2 col-sm-2 closeButton">
+                <input type="button" value="#CLOSE">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="AboutPage">
+        <div class="AboutText">
+            <div style="position: absolute; padding: 1rem; overflow: hidden ">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+            </div>
+            <div style="position: absolute; padding: 1.5rem">
+                <br>
+                <p class="ex2">
+                    YOU MUST GIVE UP N IN THIS GENERATION
+                </p>
+                <br>
+                <p class="ex3">
+                    STARTING IN 2020, THE TERM 'INVOLUTION' STARTED TO BECOME POPULAR ACROSS CHINA, WITH PEOPLE SEEMINGLY WRAPPED UP IN A MEANINGLESS ROLE OF COMPETITION.</p>
+                <p class="ex3">
+                    IN ORDER TO IMPROVE THEIR COMPETITIVENESS COMPARED TO THEIR PEERS, PEOPLE ARE MORE CONCERNED THAN EVER ABOUT APPEARANCE AND BODY IMAGE, DESPERATELY STRIVING FOR HIGHER QUALIFICATIONS AND WILLINGLY WORKING LONG HOURS. TO ONE'S DISMAY, ONE'S EFFORTS ARE NO LONGER PROPORTIONAL TO WHAT ONE GETS IN RETURN, AS THERE SEEMS TO BE NO END TO SUCH MEANINGLESS EFFORTS DUE TO SOCIAL CONFLICTS THAT INDIVIDUALS CAN NOT SOLVE, SUCH AS THE GROWING GAP BETWEEN THE RICH AND THE POOR, HIGH HOUSING PRICES, AN AGING SOCIETY, AND THE PROGRESSIVELY MORE INTENSE GENDER CONFLICTS. MORE AND MORE PEOPLE ARE DEVOTING THEMSELVES TO INVOLUTION AND HAVE NO CHOICE BUT TO PUT IN THE EFFORT.</p>
+                <p class="ex3">
+                    'INVOLUTION' MAKES PEOPLE UNCONSCIOUSLY GIVE UP MANY THINGS, SUCH AS TIME FOR REST, THEIR PREFERENCES, ETC. AT THE SAME TIME, PEOPLE ARE GIVING UP A HEALTHY DIET. BECAUSE OF FOCUSING ON WORK OR STUDY, MANY PEOPLE WILL NEGLECT OR FORGET TO EAT, OR KEEP EATING IRREGULARLY; BEING IN A HIGH-PRESSURE LIFE ENVIRONMENT FOR A LONG TIME, PEOPLE TEND TO SUBCONSCIOUSLY CHOOSE FOODS HIGH IN SUGAR AND FAT, AND SECRETE DOPAMINE THROUGH EATING REWARD MECHANISM TO INCREASE THEIR EXCITEMENT; IN ORDER TO IMPROVE THEIR COMPETITIVENESS, PEOPLE START TO FOCUS ON THEIR APPEARANCE AND DRASTICALLY REDUCE THE NUMBER OF MEALS THEY EAT IN ORDER TO LOSE WEIGHT. SOME PEOPLE SUFFER FROM BULIMIA BECAUSE THEIR STOMACHS CAN NOT COPE WITH THE SUDDEN REDUCTION IN FOOD INTAKE DUE TO EXCESSIVE CUTTING.</p>
+                <p class="ex3">
+                    'N PO FOOD' IS A FOOD BRAND DESIGNED TO CATER TO PEOPLE WHO HAVE GIVEN UP HEALTHY EATING DUE TO STRESS, AND ITS PRODUCTS ARE DESIGNED TO CATER TO PEOPLE'S POOR EATING HABITS. IT IS HOPED THAT BY SEEING THE LATEST PRODUCTS FROM 'N PO FOOD', PEOPLE WILL REALIZE THE HUGE IMPACT THAT INTENSE SOCIAL PRESSURE HAS ON THEIR LIVES SO THAT THEY CAN ADJUST THEIR LIVES AND REALIZE THE IMPORTANCE OF A HEALTHY DIET.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div data-0="background-color:rgb(0,0,255)" data-500="background-color:rgb(255,0,0)" id="trySkrollr"></div>
+<!--
+    当滚动条在顶部的时候，div的背景是蓝色
+    当滚动500px的时候，div的颜色变为红色
+    滚动条滚动的过程中，颜色是逐渐由绿色变为蓝色的
+-->
+
+
+<script>
+
+
+</script>
+<script>
+
+
+    var s=skrollr.init(
+    )
+
+    console.log(s.scrollTop);
+    /*嘴唇动画*/
+    //获取当前scroll位置
+
+    //当前窗口的高度
+    var winHeight=$(document).height();
+    //现在所在的窗口高度
+    var currentHeight=0;
+
+        //打开About界面
+    $('#Banner4').click(function (){
+            //获取到当前滑动的位置
+            currentHeight=s.getScrollTop();
+            console.log(currentHeight);
+            $('body').css("height","100%");
+             //打开About界面
+            $('.About').css("display",'flex');
+            //缓缓打开About界面的动画
+            $('.AboutPage').animate({opacity:1});
+            $('.aboutClose').animate({opacity:1});
+
+        }
+    )
+
+    //设置到当前滑动位置为之前滑动的位置
+    $('.aboutClose').click(function (){
+
+        $("body").css('height',winHeight);
+        window.scrollTo(0,currentHeight);
+        //有动画效果地打开About界面
+        $('.AboutPage').animate({opacity:0},function (){  $('.About').css("display",'none');});
+        $('.aboutClose').animate({opacity:0},function (){$('.About').css("display",'none');});
+
+    })
+
+    /*
+   document.querySelector('body').addEventListener('mousewheel',mouseDefine,{passive:true})
+    function mouseDefine(e,delta){
+        var left=$(window). scrollLeft();
+        $(window). scrollLeft(left-(delta *2))
+        e.preventDefault();
+    }*/
+    /*
+    $('body').mousewheel(function (e,delta){
+        var left=$(window). scrollLeft();
+        $(window). scrollLeft(left-(delta/5))
+    })
+
+     */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>Title</title>
+
+    <!--引入Bootstrap--->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!--引入js--->
+
+    <script type="text/javascript" src="js/jqueryDetails.js"></script>
+
+
+    <!--引入css--->
+
+    <link rel="stylesheet" type="text/css" href="css/Details.css" />
+
+    <!--引入three.js三维引擎-->
+    <script src="libs/three.js"></script>
+    <script src="libs/OrbitControls.js"></script>
+    <script src="libs/GLTFLoader.js"></script>
+    <script src="libs/DRACOLoader.js"></script>
+
+    <!--引入skrollr.js--->
+    <script src="libs/skrollr.js"></script>
+
+    <!--引入wheelScroll.js--->
+    <script src="libs/jquery.mousewheel.js"></script>
+</head>
+<body>
+<!---网页页头-->
+<div class="Banner" >
+    <!--- <img src="src/img/LOGO.png">--->
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <!---row-eq-height设置元素等高--->
+            <div class="row row-eq-height">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner1" href="HomePage.html">#N PO FOOD</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner2"href="Products.html">#WHAT'S NEW</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" id="dropdownProduct"
+                                data-toggle="dropdown" >
+                            #PRODUCTS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"style="background-color: rgba(0,0,0,0%);border: none;":>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details.html">.001</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details2.html">.002</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details3.html">.003</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details4.html">.004</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!---
+                    <a href="Details.html" id="Banner3">#PRODUCTS</a>
+                    --->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner4">#ABOUT</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<img src="src/img/Gradient_BackGround.png" class="backgroundPic1">
+<div class="Content" style="margin-right:10px;margin-left: 10px">
+    <div class="cover">
+        <!----
+        <div>
+            <img src="src/img/Elements1/GIVEUPGENERATION.png" style="height:20%;margin: auto;margin-left:3%;">
+        </div>-->
+      <div>
+          <img src="src/img/Elements1/N%20PO%20FOOD.png" style="height:2%;margin: auto;margin-bottom:8%;">
+      </div>
+        <div>
+            <h5 style="height:2%;margin-top:2%;margin-left:75%;"># PRODUCT002</h5>
+        </div>
+        <div>
+            <h5 style="height:2%;margin-top:4%;margin-left:75%;"># LOVE TO WORK</h5>
+        </div>
+
+
+    </div>
+    <div class="row" id="canvasRenderRow">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10 ">
+            <div class="row">
+
+                <div id="canvasRender">
+
+                </div>
+            </div>
+            <div class="row"style="height:10%">
+                <div class="col-2"style="padding: 0px;height: 100%;">
+                    <div style="display: flex;height: 100%;">
+                        <input type="button" class="productDetail" onclick="window.location.href='Product2Details.html'">
+                    </div>
+                </div>
+
+                <div class="col-2" style="padding:0px;font-family: ChillPixels-Matrix;height: 100%;" >
+                    <div style="display: flex;height: 100%">
+
+                        <a style="margin: auto;margin-left: 5%;"href="Product2Details.html">PRODUCT INTRODUCTION</a>
+                    </div>
+                </div>
+
+                <div class="col-2"></div>
+
+                <div class="col-2"></div>
+
+                <div class="col-2"style="padding: 0px;height: 100%;">
+                    <div style="display: flex;height: 100%;">
+                        <input type="button" class="productRotate">
+                    </div>
+                </div>
+
+                <div class="col-2" style="padding:0px;font-family: ChillPixels-Matrix;height: 100%;" >
+                    <div style="display: flex;height: 100%">
+                        <a id="productRotateWord" style="margin: auto;margin-left: 5%">ROTATE PRODUCT</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-1" style="display: flex">
+            <div class="col Elements">
+                <img src="src/img/Elements1/Line1.png">
+            </div>
+            <div class="col"style="margin:auto;padding:0;height:90%;z-index: 6">
+                <div class="row" style="display: flex; height:50%;width:auto;margin: auto;color: #FF8600">
+                    <input type="button" id="Product1"style="margin:auto;margin-left:0">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="cover">
+        <div>
+            <!--<img src="src/img/Elements1/GIVEUPGENERATION.png" style="height:20%;margin: auto;margin-left:3%;">-->
+            <input class="giveUpGeneration" type="button">
+            <!-- <div class="giveUpGeneration"></div>--->
+        </div>
+    </div>
+</div>
+
+
+
+<!--介绍界面--->
+<div class="About">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 aboutClose">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 closeIcon">
+                <img src="src/img/Menu_Icon.png">
+            </div>
+            <div class="col-lg-10 col-md-2 col-sm-2 closeButton">
+                <input type="button" value="#CLOSE">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="AboutPage">
+        <div class="AboutText">
+            <div style="position: absolute; padding: 1rem; overflow: hidden ">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+            </div>
+            <div style="position: absolute; padding: 1.5rem">
+                <br>
+                <p class="ex2">
+                    YOU MUST GIVE UP N IN THIS GENERATION
+                </p>
+                <br>
+                <p class="ex3">
+                    STARTING IN 2020, THE TERM 'INVOLUTION' STARTED TO BECOME POPULAR ACROSS CHINA, WITH PEOPLE SEEMINGLY WRAPPED UP IN A MEANINGLESS ROLE OF COMPETITION.</p>
+                <p class="ex3">
+                    IN ORDER TO IMPROVE THEIR COMPETITIVENESS COMPARED TO THEIR PEERS, PEOPLE ARE MORE CONCERNED THAN EVER ABOUT APPEARANCE AND BODY IMAGE, DESPERATELY STRIVING FOR HIGHER QUALIFICATIONS AND WILLINGLY WORKING LONG HOURS. TO ONE'S DISMAY, ONE'S EFFORTS ARE NO LONGER PROPORTIONAL TO WHAT ONE GETS IN RETURN, AS THERE SEEMS TO BE NO END TO SUCH MEANINGLESS EFFORTS DUE TO SOCIAL CONFLICTS THAT INDIVIDUALS CAN NOT SOLVE, SUCH AS THE GROWING GAP BETWEEN THE RICH AND THE POOR, HIGH HOUSING PRICES, AN AGING SOCIETY, AND THE PROGRESSIVELY MORE INTENSE GENDER CONFLICTS. MORE AND MORE PEOPLE ARE DEVOTING THEMSELVES TO INVOLUTION AND HAVE NO CHOICE BUT TO PUT IN THE EFFORT.</p>
+                <p class="ex3">
+                    'INVOLUTION' MAKES PEOPLE UNCONSCIOUSLY GIVE UP MANY THINGS, SUCH AS TIME FOR REST, THEIR PREFERENCES, ETC. AT THE SAME TIME, PEOPLE ARE GIVING UP A HEALTHY DIET. BECAUSE OF FOCUSING ON WORK OR STUDY, MANY PEOPLE WILL NEGLECT OR FORGET TO EAT, OR KEEP EATING IRREGULARLY; BEING IN A HIGH-PRESSURE LIFE ENVIRONMENT FOR A LONG TIME, PEOPLE TEND TO SUBCONSCIOUSLY CHOOSE FOODS HIGH IN SUGAR AND FAT, AND SECRETE DOPAMINE THROUGH EATING REWARD MECHANISM TO INCREASE THEIR EXCITEMENT; IN ORDER TO IMPROVE THEIR COMPETITIVENESS, PEOPLE START TO FOCUS ON THEIR APPEARANCE AND DRASTICALLY REDUCE THE NUMBER OF MEALS THEY EAT IN ORDER TO LOSE WEIGHT. SOME PEOPLE SUFFER FROM BULIMIA BECAUSE THEIR STOMACHS CAN NOT COPE WITH THE SUDDEN REDUCTION IN FOOD INTAKE DUE TO EXCESSIVE CUTTING.</p>
+                <p class="ex3">
+                    'N PO FOOD' IS A FOOD BRAND DESIGNED TO CATER TO PEOPLE WHO HAVE GIVEN UP HEALTHY EATING DUE TO STRESS, AND ITS PRODUCTS ARE DESIGNED TO CATER TO PEOPLE'S POOR EATING HABITS. IT IS HOPED THAT BY SEEING THE LATEST PRODUCTS FROM 'N PO FOOD', PEOPLE WILL REALIZE THE HUGE IMPACT THAT INTENSE SOCIAL PRESSURE HAS ON THEIR LIVES SO THAT THEY CAN ADJUST THEIR LIVES AND REALIZE THE IMPORTANCE OF A HEALTHY DIET.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!--Three.js Javascript代码-->
+<script>
+
+    var scene,camera,renderer,
+        light,group,geometry,mesh,controls,root;
+    var centerX,centerY,centerZ;
+    var mixed;
+    var raycaster=new THREE.Raycaster();
+    var mouse=new THREE.Vector2();
+    var Box,boxClips;
+
+
+    init();//开始初始化
+    //将需要初始化的放在该方法中统一初始化
+    function init(){
+        initScene();//初始化场景
+        initCamera();//初始化相机
+        initRenender();//初始化渲染器
+        initLight();//初始化光线
+        initOthers();//初始化其他参数
+        setWindown();//窗体的设置
+        loadModel();//加载模型
+        setRotate();
+        /*
+        document.addEventListener("mousedown", onDocumentMouseDown, {passive:false});
+        document.addEventListener("touchstart", onDocumentTouchStart, {passive:false});
+        document.addEventListener("touchmove", onDocumentTouchMove,{passive:false});
+
+         */
+    }
+
+    //初始化场景
+    function initScene(){
+        scene = new THREE.Scene();//创建场景
+    }
+    function clearScene(){
+        scene.remove(root);
+    }
+
+    //初始化相机
+    function  initCamera(){
+        //创建相机对象
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
+        //设置相机位置
+        camera.position.set(0, 500, 0);
+        camera.rotation.set(Math.PI/2,Math.PI/2,0);
+        camera.scale.set(2,2,2);
+        //设置相机方向(指向的场景对象)
+        camera.lookAt(0,0,0);
+    }
+
+    //初始化渲染器
+    function initRenender(){
+        //创建渲染器
+        //抗锯齿，渲染背景透明度
+        renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth/1.2, window.innerHeight/1.2);
+        renderer.outputEncoding= THREE.sRGBEncoding;// three.js 的色彩空间渲染方式
+    }
+
+    //初始化光线
+    function initLight(){
+        const spotLight1 = new THREE.SpotLight( 0xffffff );
+
+        spotLight1.position.set( 100, 100, 100 );
+        spotLight1.castShadow = true;
+        spotLight1.shadow.mapSize.width = 100;
+        spotLight1.shadow.mapSize.height = 100;
+        spotLight1.intensity=0.6;
+
+        scene.add(spotLight1);
+        scene.add(new THREE.AmbientLight(0xffffff,0.8));
+    }
+
+    //将内容渲染到界面中
+    function initOthers(){
+        document.getElementById('canvasRender').appendChild(renderer.domElement);//渲染到浏览器
+    }
+
+    //定义窗口的设置
+    function setWindown(){
+        //加入事件监听器,窗口自适应
+        window.addEventListener('resize', function(){
+            var width = window.innerWidth/1.2;
+            var height = window.innerHeight/1.2;
+            renderer.setSize(width,height);
+            camera.aspect = width/height;
+            camera.updateProjectionMatrix();
+        });
+    }
+    var j=0;
+    var m=0;
+    var k=0;
+    var playAnimations1=new Array();
+    var playAnimations2=new Array();
+    var playAnimations3=new Array();
+    //加载盒子
+    function loadModel(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+        loader.load( 'models/MedicineBox.glb', function ( gltf ) {
+            clearScene();
+            root = gltf.scene;
+            root.scale.set(80,80,80) //设置模型大小
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/2,-Math.PI/8,0);
+            root.position.set(0,0,0);
+            root.traverse(function(child)
+            {
+                if (child instanceof THREE.Mesh)
+                { //console.log(child.name);
+                    if(child.name=='外壳'||child.name=='外壳001'||child.name=='外壳002'||child.name=='Base001'||child.name=='外套'){
+                        //console.log(child.name);
+                        //重点，没有该句会导致PNG无法正确显示透明效果
+                        child.material.transparent = true;
+
+                        if(child.name=="外套"){
+                            child.material.map.size=-1;
+                            child.material.specular='#ffefe0';
+                            child.material.shininess=100;
+                            child.material.opacity=1;
+                            child.material.roughness=2;
+                        }
+
+                    }
+                }
+            });
+            this.scene.add( root ); //模型加入场景中
+            Box=gltf.scene;
+
+            boxClips=gltf.animations;
+            //console.log(gltf.animations.length);
+            var num=boxClips.length;
+
+            for(var i=0;i<num;i++){
+
+                if(boxClips[i].name=='1'||boxClips[i].name=='2'||boxClips[i].name=='3'||boxClips[i].name=='4'||boxClips[i].name=='5'||boxClips[i].name=='6'||boxClips[i].name=='7'){
+                    playAnimations1[j]=boxClips[i];
+                    j++;
+
+                }
+                else if(boxClips[i].name=='8.1'||
+                boxClips[i].name=='8.2'||boxClips[i].name=='8.3'||boxClips[i].name=='8.4'||boxClips[i].name=='8.5'||boxClips[i].name=='8.6'||boxClips[i].name=='8.7'||boxClips[i].name=='8.8'||boxClips[i].name=='9'){
+                    playAnimations2[m]=boxClips[i];
+                    m++;
+                }
+                else if(boxClips[i].name=='11.1'||
+                    boxClips[i].name=='11.2'||boxClips[i].name=='11.3'||boxClips[i].name=='11.4'||boxClips[i].name=='11.5'||boxClips[i].name=='11.6'||boxClips[i].name=='11.7'||boxClips[i].name=='10'){
+                    playAnimations3[k]=boxClips[i];
+                    k++;
+                }
+            }
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+    //打开盒子
+
+
+    function openBox(){
+
+        for(var i1=0;i1<playAnimations1.length;i1++){
+             //console.log(playAnimations1[i1].name+'nihoa');
+            onesAnimate(Box,playAnimations1[i1]);
+        }
+       // onesAnimate(Box,openClips);
+    }
+    //关闭盒子
+    function closeBox(){
+        for(var i1=0;i1<playAnimations1.length;i1++){
+            //console.log(playAnimations1[i1].name+'nihoa');
+            onesReversAnimate(Box,playAnimations1[i1]);
+        }
+    }
+
+    function baseDown(){
+
+        for(var i1=0;i1<playAnimations2.length;i1++){
+            //console.log(playAnimations1[i1].name+'nihoa');
+            onesAnimate(Box,playAnimations2[i1]);
+        }
+        // onesAnimate(Box,openClips);
+    }
+    //关闭盒子
+    function baseUp(){
+        console.log('lenght'+playAnimations3.length);
+        for(var i1=0;i1<playAnimations3.length;i1++){
+            //console.log(playAnimations1[i1].name+'nihoa');
+            onesAnimate(Box,playAnimations3[i1]);
+        }
+    }
+
+
+
+
+    //正放
+    function onesAnimate(mash, animate) {
+        //animate.clampWhenFinished=true;
+        const mixer = new THREE.AnimationMixer(mash);
+        const action = mixer.clipAction(animate);
+        action.clampWhenFinished=true;
+        action.setLoop(THREE.LoopOnce);
+        action.play();
+        //console.log(action.time)
+        const clip = action.getClip();
+        //console.log("clip.time")
+        const duration = clip.duration;
+        //console.log(clip.duration)
+        const clock = new THREE.Clock();
+        let sum = 0;
+        //循环更新
+        const run = () => {
+            if (sum > duration) return;
+            window.requestAnimationFrame(run)
+            const t = clock.getDelta();
+            sum += t;
+            //console.log(sum);
+            mixer.update(t);
+        }
+        run();
+    }
+
+    //倒放
+    function onesReversAnimate(mash, animate) {
+        //animate.clampWhenFinished=true;
+        const mixer = new THREE.AnimationMixer(mash);
+
+        const action = mixer.clipAction(animate);
+        action.clampWhenFinished=true;
+        action.setLoop(THREE.LoopOnce);
+
+        action.play();
+        //action.timeScal=-1;
+        //console.log(action.time)
+        const clip = action.getClip();
+
+        //console.log("clip.time")
+        const duration = clip.duration;
+        //console.log(clip.duration)
+        const clock = new THREE.Clock();
+        let sum = 0;
+        //循环更新
+        const run = () => {
+            if (sum > 0) return;
+            window.requestAnimationFrame(run)
+            const t = clock.getDelta();
+            sum += t;
+            //console.log(sum);
+            mixer.update(t);
+        }
+        run();
+    }
+    //盒子是否是开的
+    var boxOpen=false;
+    //抽屉是否是开的
+    var drawerOpen=false;
+    //铝罐是否是升起
+    var canUp=false;
+    //代餐卡是否移动
+    var foodReplacement=false;
+
+    //当鼠标电机的时候，检测点击的物品父物品名字
+    function onMouseDown(event){
+        var width = window.innerWidth/1.2;
+        var height = window.innerHeight/1.2;
+        mouse.x = (event.clientX / width) * 2 - 1.2;
+        mouse.y = -(event.clientY / height) *2 + 1.2;
+
+        //将平面坐标系转为世界坐标系
+        raycaster.setFromCamera(mouse, camera);
+        //得到点击的几何体
+        var raycasters = raycaster.intersectObjects(scene.children);
+        if (raycasters.length > 0) {
+            var rayObject=raycasters[0].object.parent.name;
+            console.log(raycasters[0].object.parent.name);
+            if(rayObject!=null){
+                //盒子
+                if(rayObject=="Medicine"&&boxOpen==false){
+                    //console.log('ni');
+                    openBox(Box,boxClips);
+                    boxOpen=true;
+                }
+                else if(rayObject=="Medicine"&&boxOpen){
+                   closeBox(Box,boxClips);
+                    boxOpen=false;
+                }
+                else if(rayObject=="Base"&&drawerOpen==false){
+                    baseDown();
+                    drawerOpen=true;
+                }
+                else if(rayObject=="Base"&&drawerOpen){
+                    console.log('nihao')
+                    baseUp();
+                    drawerOpen=false;
+                }
+            }
+
+
+        }
+
+    }
+    window.addEventListener('mousedown',onMouseDown,{passive:false});
+
+    //*鼠标控制模型旋转角度*//
+    /*
+    var targetRotation = 0;
+    var targetRotationOnMouseDown = 0;
+    var mouseX = 0;
+    var mouseXOnMouseDown = 0;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+    function onDocumentMouseDown(event) {
+        event.preventDefault();
+        document.addEventListener("mousemove", onDocumentMouseMove,{passive:false});
+        document.addEventListener("mouseup", onDocumentMouseUp,{passive:false});
+        document.addEventListener("mouseout", onDocumentMouseOut,{passive:false});
+        //按下去的时候鼠标相对位置
+        mouseXOnMouseDown = event.layerX - windowHalfX;
+        //鼠标按下的旋转角度
+        targetRotationOnMouseDown = targetRotation;
+    }
+
+    function onDocumentMouseMove(event) {
+        //移动的时候鼠标相对位置
+        mouseX = event.layerX - windowHalfX;
+        //移动的时候旋转的角度 = 刚按下鼠标的角度+移动的位置-鼠标按下时的位置
+        targetRotation = targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.02;
+    }
+
+    function onDocumentMouseUp(event) {
+        document.removeEventListener("mousemove", onDocumentMouseMove,  {passive:false});
+        document.removeEventListener("mouseup", onDocumentMouseUp,  {passive:false});
+        document.removeEventListener("mouseout", onDocumentMouseOut,{passive:false});
+    }
+
+    function onDocumentMouseOut(event) {
+        document.removeEventListener("mousemove", onDocumentMouseMove, {passive:false});
+        document.removeEventListener("mouseup", onDocumentMouseUp,  {passive:false});
+        document.removeEventListener("mouseout", onDocumentMouseOut, {passive:false});
+    }
+
+    function onDocumentTouchStart(event) {
+        if (event.touches.length === 1) {
+            event.preventDefault();
+            mouseXOnMouseDown = event.touches[0].layerX - windowHalfX;
+            targetRotationMouseDown = targetRotation;
+        }
+    }
+
+    function onDocumentTouchMove(event) {
+        if (event.touches.length === 1) {
+
+            event.preventDefault();
+            mouseX = event.touches[0].layerX - windowHalfX;
+            targetRotation = targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.05;
+        }
+    }
+    */
+
+    function setRotate(){
+        controls = new THREE.OrbitControls(camera,renderer.domElement);//创建控件对象
+        controls.target=new THREE.Vector3(0,0,0);
+        controls.enableZoom=false;
+        controls.enablePan=false;
+        controls.addEventListener('change', render,{passive:false});//监听鼠标、键盘事件
+        //controls.maxAzimuthAngle=Math.PI/4;
+       // controls.minAzimuthAngle=-Math.PI/4;
+        //controls.maxPolarAngle=Math.PI/2;
+        //controls.minPolarAngle=0;
+    }
+
+    var range=0;
+    function rotateModel(){
+        /*if(root!=null){
+            if(range<=50){
+                range+=0.1;
+                if(range>50){
+                    range=100;
+                }
+                root.rotation.y+=0.005;
+            }
+            else {
+                //console.log(range)
+                //console.log("进去了")
+                range-=0.1;
+                root.rotation.y-=0.005;
+                if(range<=50){
+                    range=0;
+                }
+            }
+            //console.log(range)
+        } */
+        if(root!=null){
+            root.rotation.y+=0.005;
+        }
+
+    }
+    var isProductRotate=false;
+    //逻辑
+    var update=function(){
+        //物体随着XY轴旋转
+        if(isProductRotate){
+            rotateModel();
+        }
+        else{
+
+        }
+        // root.rotate.y+=0.01;
+        //rotateModel();
+
+        //cube.rotation.x +=0.01;
+        //cube.rotation.y += 0.005;
+    }
+
+    // 渲染函数
+    function render() {
+        renderer.render(scene, camera); //执行渲染操作
+        //requestAnimationFrame(render);//请求再次执行渲染函数render，渲染下一帧
+    }
+
+    //循环运行update，render
+    var loop=function() {
+        requestAnimationFrame(loop);//请求再次执行渲染函数render，渲染下一帧
+        update();
+        render();
+    }
+
+
+
+    loop();//循环开始
+    $('.productRotate').click(
+        function (){
+            console.log('旋转')
+         isProductRotate=!isProductRotate;
+
+        }
+    )
+    $('#productRotateWord').click(
+        function (){
+            console.log('旋转')
+            isProductRotate=!isProductRotate;
+        }
+    )
+
+</script>
+
+<script>
+    var btn1=document.getElementById('Product1');
+
+   btn1.onclick=function (){
+        loadModel();
+        console.log('nihao')
+    }
+
+
+
+</script>
+<!--Skrollr.js Javascript代码-->
+<script>
+skrollr.init()
+</script>
+
+</body>
+</html>

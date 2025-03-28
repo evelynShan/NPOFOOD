@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <!--引入Bootstrap--->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <script src="libs/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!--引入js--->
+    <script type="text/javascript" src="js/javascriptProduct.js"></script>
+    <script type="text/javascript" src="js/jqueryProduct.js"></script>
+
+    <!--引入css---->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!--引入three.js三维引擎-->
+    <script   src="libs/three.js"></script>
+    <script   src="libs/OrbitControls.js"></script>
+    <script src="libs/GLTFLoader.js"></script>
+    <script  src="libs/DRACOLoader.js"></script>
+    <script  type="module" src="libs/LoadingManager.js"></script>
+
+
+    <!-- <script src="./three.js"></script> -->
+    <meta http-equiv=”Page-Enter” content=”revealTrans(Duration=3.0,Transition=4)”>
+    <meta http-equiv=”Page-Exit” content=”revealTrans(Duration=3.0,Transition=4)”>
+</head>
+
+<body>
+
+<!---网页加载动画-->
+<div class="spinner">
+
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+
+</div>
+
+<!---网页内容-->
+<div class="Banner" >
+    <!--- <img src="src/img/LOGO.png">--->
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <!---row-eq-height设置元素等高--->
+            <div class="row row-eq-height">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner1" href="HomePage.html">#N PO FOOD</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner2"href="Products.html">#WHAT'S NEW</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" id="dropdownProduct"
+                                data-toggle="dropdown" >
+                            #PRODUCTS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"style="background-color: rgba(0,0,0,0%);border: none;":>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details.html">.001</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details2.html">.002</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details3.html">.003</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details4.html">.004</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!---
+                    <a href="Details.html" id="Banner3">#PRODUCTS</a>
+                    --->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner4">#ABOUT</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!---模型渲染-->
+<div class="row" id="canvasRenderRow">
+
+    <div class="col-md-6 ">
+        <div class="row">
+
+        <div class="col-lg-8"id="canvasRender">
+
+        </div>
+        </div>
+        <div class="row row2">
+            <div class="col-lg-6 col-md-6 col-sm-6 changeModel">
+
+                    <input type="button"value=""id="lastModel">
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 changeModel">
+
+                    <input type="button"value=""id="nextModel">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+       <br>  <br>  <br>
+            <span></span>
+
+            <div class="productDescription">
+                <h2 class="productTitle"id="Title1">NEW ARRIVAL-001</h2>
+                <h2 class="productTitle"id="Title2"> Slim Fast</h2>
+                <p class="productContent"id="Content1">Meal replacements help to reduce your energy intake and sparkling water helps to make you feel fuller, allowing you to reduce your food intake.
+                    Order our 'Slim Fast' products to shorten your slimming program cycle, get happy, and slim down to your perfect figure.
+                </p>
+                <h5 class="productTitle"style="color: #FF8600;"> SERVICES:</h5>
+                <p class="productContent"id="Content2">
+                    · DIY Meal Replacement Cup
+                </p>
+                <p class="productContent"id="Content3">
+                    · Storage box
+                </p>
+                <p class="productContent"id="Content4">
+                    · Customized Meal Replacement Cards
+                </p>
+                <p class="productContent"id="Content5">
+                    · Customized Inflatable Tins
+                </p>
+                <h5 class="productTitle"style="color: #FF8600;"> ADDITIONAL INFO:</h5>
+                <p class="productContent"id="Content6">We have made every effort to ensure that the information on this page was accurate at the time of final editing. As we are constantly reviewing and developing our products to meet the needs of consumers,especially those who need to lose weight fast and don't have time to work out.
+                </p>
+<!---
+                <img src="src/img/Elements1/ProductProperty.png" style="width: 30%;display: inline;float: right;margin-right: 20%;margin-top: 10%">
+           -->
+                <img src="src/img/Elements1/ProductProperty.png"style="position: fixed;width:17%;right:9%;bottom:15%">
+            </div>
+
+
+
+
+    </div>
+</div>
+
+
+<div class="container">
+
+
+
+</div>
+
+
+<div class="bottomWords">
+    <input type="text" id="scrollLeftBox">
+</div>
+
+
+<!--介绍界面--->
+<div class="About">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 aboutClose">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 closeIcon">
+                <img src="src/img/Menu_Icon.png">
+            </div>
+            <div class="col-lg-10 col-md-2 col-sm-2 closeButton">
+                <input type="button" value="#CLOSE">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="AboutPage">
+        <div class="AboutText">
+            <div style="position: absolute; padding: 1rem; overflow: hidden ">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+            </div>
+            <div style="position: absolute; padding: 1.5rem">
+                <br>
+                <p class="ex2">
+                    YOU MUST GIVE UP N IN THIS GENERATION
+                </p>
+                <br>
+                <p class="ex3">
+                    STARTING IN 2020, THE TERM 'INVOLUTION' STARTED TO BECOME POPULAR ACROSS CHINA, WITH PEOPLE SEEMINGLY WRAPPED UP IN A MEANINGLESS ROLE OF COMPETITION.</p>
+                <p class="ex3">
+                    IN ORDER TO IMPROVE THEIR COMPETITIVENESS COMPARED TO THEIR PEERS, PEOPLE ARE MORE CONCERNED THAN EVER ABOUT APPEARANCE AND BODY IMAGE, DESPERATELY STRIVING FOR HIGHER QUALIFICATIONS AND WILLINGLY WORKING LONG HOURS. TO ONE'S DISMAY, ONE'S EFFORTS ARE NO LONGER PROPORTIONAL TO WHAT ONE GETS IN RETURN, AS THERE SEEMS TO BE NO END TO SUCH MEANINGLESS EFFORTS DUE TO SOCIAL CONFLICTS THAT INDIVIDUALS CAN NOT SOLVE, SUCH AS THE GROWING GAP BETWEEN THE RICH AND THE POOR, HIGH HOUSING PRICES, AN AGING SOCIETY, AND THE PROGRESSIVELY MORE INTENSE GENDER CONFLICTS. MORE AND MORE PEOPLE ARE DEVOTING THEMSELVES TO INVOLUTION AND HAVE NO CHOICE BUT TO PUT IN THE EFFORT.</p>
+                <p class="ex3">
+                    'INVOLUTION' MAKES PEOPLE UNCONSCIOUSLY GIVE UP MANY THINGS, SUCH AS TIME FOR REST, THEIR PREFERENCES, ETC. AT THE SAME TIME, PEOPLE ARE GIVING UP A HEALTHY DIET. BECAUSE OF FOCUSING ON WORK OR STUDY, MANY PEOPLE WILL NEGLECT OR FORGET TO EAT, OR KEEP EATING IRREGULARLY; BEING IN A HIGH-PRESSURE LIFE ENVIRONMENT FOR A LONG TIME, PEOPLE TEND TO SUBCONSCIOUSLY CHOOSE FOODS HIGH IN SUGAR AND FAT, AND SECRETE DOPAMINE THROUGH EATING REWARD MECHANISM TO INCREASE THEIR EXCITEMENT; IN ORDER TO IMPROVE THEIR COMPETITIVENESS, PEOPLE START TO FOCUS ON THEIR APPEARANCE AND DRASTICALLY REDUCE THE NUMBER OF MEALS THEY EAT IN ORDER TO LOSE WEIGHT. SOME PEOPLE SUFFER FROM BULIMIA BECAUSE THEIR STOMACHS CAN NOT COPE WITH THE SUDDEN REDUCTION IN FOOD INTAKE DUE TO EXCESSIVE CUTTING.</p>
+                <p class="ex3">
+                    'N PO FOOD' IS A FOOD BRAND DESIGNED TO CATER TO PEOPLE WHO HAVE GIVEN UP HEALTHY EATING DUE TO STRESS, AND ITS PRODUCTS ARE DESIGNED TO CATER TO PEOPLE'S POOR EATING HABITS. IT IS HOPED THAT BY SEEING THE LATEST PRODUCTS FROM 'N PO FOOD', PEOPLE WILL REALIZE THE HUGE IMPACT THAT INTENSE SOCIAL PRESSURE HAS ON THEIR LIVES SO THAT THEY CAN ADJUST THEIR LIVES AND REALIZE THE IMPORTANCE OF A HEALTHY DIET.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    var scene,camera,renderer,
+        light,group,geometry,mesh,controls;
+    var root=null;
+    var modelCount=1;
+
+    init();//开始初始化
+
+    //将需要初始化的放在该方法中统一初始化
+    function init(){
+        initScene();//初始化场景
+        initCamera();//初始化相机
+        initRenender();//初始化渲染器
+        initLight();//初始化光线
+        initOthers();//初始化其他参数
+        setWindown();//窗体的设置
+        loadModel1();
+        //loadModuleByDRACOLoader('models/','MedicineBox.glb','false',50,10,180);
+        //setEventsMouse();//鼠标事件的定义
+        //setKeyEvents();//定义键盘按键事件
+
+        //Box();
+    }
+
+
+
+    function loadModel(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+
+        loader.load( 'models/Medicine.glb', function ( gltf ) {
+            root = gltf.scene;
+            root.scale.set(20,20,20) //设置模型大小
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/2,0,0);
+            root.position.set(-50,200,100);
+            this.scene.add( root ); //模型加入场景中
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+
+
+    function moveModeol(model){
+        model.traverse(function (child){
+            console.log(child.name);
+            }
+        )
+    }
+
+
+
+
+    //初始化场景
+    function initScene(){
+        scene = new THREE.Scene();//创建场景
+
+    }
+
+    //初始化相机
+    function  initCamera(){
+        //创建一个摄像机对象
+        // camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 1000);
+        // camera.position.z=3;//设置相机的位置
+
+        //创建相机对象
+        camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 1000);
+        camera.position.set(0, 500, 0);//设置相机位置
+
+        camera.rotation.set(Math.PI/2,Math.PI/2,0);
+        camera.scale.set(2,2,2);
+
+        camera.lookAt(scene.position); //设置相机方向(指向的场景对象)
+    }
+
+    //初始化渲染器
+    function initRenender(){
+        //创建渲染器
+        //抗锯齿，渲染背景透明度
+        renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
+        //renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
+        //var width=document.getElementById('canvasRender').offsetWidth;
+        //var width=document.getElementById('canvasRender').offsetWidth;
+        //renderer.setSize(window.innerWidth/1.2, window.innerHeight/1.2);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
+        renderer.outputEncoding= THREE.sRGBEncoding;// three.js 的色彩空间渲染方式  【重要】
+    }
+
+
+    //其他内容初始化
+    function initOthers(){
+        document.getElementById('canvasRender').appendChild(renderer.domElement);//渲染到浏览器
+    }
+
+    function Box() {
+        geometry = new THREE.BoxGeometry(100, 100, 100); //创建一个立方体几何对象Geometry
+        var material = new THREE.MeshLambertMaterial({
+            color: 0x0000ff
+        }); //材质对象Material
+        mesh = new THREE.Mesh(geometry, material); //网格模型对象Mesh
+        scene.add(mesh); //网格模型添加到场景中
+        // 几何体xyz三个方向都放大2倍
+        geometry.scale(2, 2, 2);
+        // 几何体沿着x轴平移50
+        geometry.translate(50, 0, 0);
+        // 几何体绕着x轴旋转45度
+        geometry.rotateX(Math.PI / 4);
+        // 居中：偏移的几何体居中
+        geometry.center();
+    }
+
+    //定义窗口的设置
+    function setWindown(){
+        //加入事件监听器,窗口自适应
+        window.addEventListener('resize', function(){
+            var width = window.innerWidth/1.5;
+            var height = window.innerHeight/1.5;
+            renderer.setSize(width,height);
+            camera.aspect = width/height;
+            camera.updateProjectionMatrix();
+        });
+    }
+
+
+    //定义鼠标事件
+    function setEventsMouse(){
+        //点击了鼠标左键
+        window.addEventListener( 'click', function(e){
+            if(e.button===0){
+                console.log("点击了鼠标左键");
+            }
+        } );
+
+        //点击了鼠标右键
+        window.addEventListener( 'contextmenu', function(e){
+            if(e.button===2){
+                console.log("点击了鼠标右键");
+            }
+        } );
+
+        //鼠标移动坐标2D坐标
+        window.addEventListener( 'mousemove', function(e){
+            console.log('x:'+e.x);
+            console.log('y:'+e.y);
+        } );
+
+    }
+
+    //定义键盘按键事件
+    function setKeyEvents(){
+        window.addEventListener('keydown',function(e){
+            console.log(e);
+        });
+    }
+
+
+
+    //初始化光线
+    function initLight(){
+        //5.    光（Light）光源的基类。
+        //light = new THREE.Light(0xFFFFFF,2.0);
+        const spotLight1 = new THREE.SpotLight( 0xffffff );
+        spotLight1.position.set( 100, 200, 200 );
+        spotLight1.castShadow = true;
+        spotLight1.shadow.mapSize.width = 100;
+        spotLight1.shadow.mapSize.height = 100;
+        spotLight1.intensity=0.6;
+        scene.add(spotLight1);
+        scene.add(new THREE.AmbientLight(0xffffff,0.8));
+    }
+
+    //逻辑
+    var update=function(){
+        //物体随着XY轴旋转
+       // root.rotate.y+=0.01;
+        if(root!=null){
+            root.rotation.y+=0.01;
+        }
+
+        //cube.rotation.x +=0.01;
+        //cube.rotation.y += 0.005;
+    }
+
+    // 渲染函数
+    function render() {
+        renderer.render(scene, camera); //执行渲染操作
+        //requestAnimationFrame(render);//请求再次执行渲染函数render，渲染下一帧
+    }
+
+    //循环运行update，render
+    var loop=function() {
+        requestAnimationFrame(loop);//请求再次执行渲染函数render，渲染下一帧
+        update();
+        render();
+    }
+
+    /**
+     * 清除模型，模型中有 group 和 scene,需要进行判断
+     * @param scene
+     * @returns
+     */
+    function clearScene(){
+       scene.remove(root);
+    }
+
+    // 删除group，释放内存
+    function deleteGroup(group) {
+        //console.log(group);
+        if (!group) return;
+        // 删除掉所有的模型组内的mesh
+        group.traverse(function (item) {
+            if (item instanceof THREE.Mesh) {
+                item.geometry.dispose(); // 删除几何体
+                item.material.dispose(); // 删除材质
+            }
+        });
+    }
+
+    /**
+     *
+     *  path:存放模型父路径
+     *  modelName:模型名
+     *  setCenter:是否居中
+     *  scale:模型的缩放比设定
+     *  position:模型的位置
+     *  rotation:模型的局部旋转
+     */
+    function loadModuleByDRACOLoader(
+        path,
+        modelName,
+        setCenter,
+        scale,
+        position,
+        rotation
+    ) {
+        let scaleVec3, positionVec3;
+        if (typeof scale == "number") {
+            scaleVec3 = new THREE.Vector3(scale, scale, scale);
+        } else {
+            scaleVec3 = new THREE.Vector3(scale.x, scale.y, scale.z);
+        }
+        if (typeof position == "number") {
+            positionVec3 = new THREE.Vector3(position, position, position);
+        } else {
+            positionVec3 = new THREE.Vector3(position.x, position.y, position.z);
+        }
+        let dracoLoader = new THREE.DRACOLoader();
+        dracoLoader.setDecoderPath("libs/draco/"); // 设置public下的解码路径，注意最后面的/
+        dracoLoader.setDecoderConfig({ type: "js" }); //使用兼容性强的draco_decoder.js解码器
+        dracoLoader.preload();
+
+        const loader = new THREE.GLTFLoader().setPath(path);
+        loader.setDRACOLoader(dracoLoader);
+        return new Promise((res, rj) => {
+            loader.load(modelName, (gltf) => {
+                if (setCenter) {
+                    gltf.scene.traverse(function(child) {
+                        if (setCenter && child.isMesh) {
+                            child.geometry.center();
+                        }
+                    });
+                }
+
+                gltf.scene.scale.copy(scaleVec3);
+                gltf.scene.position.copy(positionVec3);
+                if (rotation) {
+                    gltf.scene.rotation.copy(rotation);
+                }
+                scene.add(gltf.scene);
+                res(gltf.scene);
+                gltf = null;
+            });
+        });
+    }
+    //减肥食品
+    function loadModel1(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+
+        loader.load( 'models/Bottles.glb', function ( gltf ) {
+            clearScene();
+
+            root = gltf.scene;
+            root.scale.set(25,25,25) //设置模型大小
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/2,0,0);
+            root.position.set(-50,200,30);
+            this.scene.add( root ); //模型加入场景中
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+    //坚持工作
+    function loadModel2(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+        loader.load( 'models/MedicineBox.glb', function ( gltf ) {
+            clearScene();
+            root = gltf.scene;
+            root.scale.set(80,80,80) //设置模型大小
+
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/2,0,0);
+            root.position.set(-100,20,65);
+            let mate= new THREE.TextureLoader().load('src/img/Texture/MedicineCover1.png')
+            /*
+            *
+            var materials=new THREE.MeshPhongMaterial({
+                color: '#ffefe0',
+                specular: 0x050505,
+                shininess: 100,
+                map:mate,
+            });*/
+            root.traverse(function(child)
+            {
+                if (child instanceof THREE.Mesh)
+                { //console.log(child.name);
+                    if(child.name=='外壳'||child.name=='外壳001'||child.name=='外壳002'||child.name=='Base001'||child.name=='外套'){
+                        console.log(child.name);
+                        //重点，没有该句会导致PNG无法正确显示透明效果
+                        child.material.transparent = true;
+
+                        if(child.name=="外套"){
+                            child.material.map.size=-1;
+                            child.material.specular='#ffefe0';
+                            child.material.shininess=100;
+                            child.material.opacity=1;
+                            child.material.roughness=2;
+                        }
+
+                    }
+                }
+            });
+            this.scene.add( root ); //模型加入场景中
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+
+    //永不饥饿
+    function loadModel3(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+        loader.load( 'models/BubbleMachine.glb', function ( gltf ) {
+            clearScene();
+            root = gltf.scene;
+            root.scale.set(40,40,40) //设置模型大小
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/2,0,0);
+            root.position.set(-50,200,75);
+            root.traverse(function(child)
+            {
+                if (child instanceof THREE.Mesh)
+                { //console.log(child.name);
+                    if(child.name=='泡泡机外壳'||child.name=='外壳1'||child.name=='外壳2'){
+                        //console.log(child.name);
+                        //重点，没有该句会导致PNG无法正确显示透明效果
+                        child.material.transparent = true;
+
+                        if(child.name=="外套"){
+                            child.material.map.size=-1;
+                            child.material.specular='#ffefe0';
+                            child.material.shininess=100;
+                            child.material.opacity=1;
+                            child.material.roughness=2;
+                        }
+
+                    }
+                }
+            });
+            this.scene.add( root ); //模型加入场景中
+            Box=gltf.scene;
+            boxClips=gltf.animations;
+            //console.log(gltf.animations.length);
+            var num=boxClips.length;
+
+            for(var i=0;i<num;i++){
+                if(boxClips[i].name=='旋钮Action'||boxClips[i].name=='球体.083Action'||boxClips[i].name=='球体.228Action'){
+                    playAnimations[j]=boxClips[i];
+                    console.log(playAnimations[j].name)
+                    j++;
+                }
+            }
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+
+    //保持快乐
+    function loadModel4(){
+        const loader = new THREE.GLTFLoader();
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+        loader.load( 'models/Charging.glb', function ( gltf ) {
+            clearScene();
+            root = gltf.scene;
+            root.scale.set(120,120,120) //设置模型大小
+            //root.position.set(100,10,10);
+            root.rotation.set(-Math.PI/3,0,0);
+            root.position.set(-100,10,40);
+            this.scene.add( root ); //模型加入场景中
+            Box=gltf.scene;
+            boxClips=gltf.animations;
+            //console.log(gltf.animations[1].duration);
+            //root.rotation.y =Math.PI //以世界坐标y轴旋转180°
+        });
+    }
+
+    //controls = new THREE.OrbitControls(camera,renderer.domElement);//创建控件对象
+    //controls.addEventListener('change', render);//监听鼠标、键盘事件
+
+    // 将渲染尺寸设置为其显示的尺寸，返回画布像素尺寸是否等于其显示(css)尺寸的布尔值
+
+
+    loop();//循环开始
+
+
+    var btn=document.getElementById("nextModel");
+    btn.onclick=function(){
+        modelCount++;
+
+        if(modelCount==2){
+            loadModel2();
+        }
+        else if(modelCount==3){
+            loadModel3();
+        }
+        else if(modelCount==4){
+            loadModel4();
+        }
+        else if(modelCount==5){
+            loadModel1();
+            modelCount=1;
+        }
+    }
+    var btn=document.getElementById("lastModel");
+    btn.onclick=function(){
+
+        modelCount--;
+        console.log(modelCount);
+        if(modelCount==0){
+            loadModel4();
+            modelCount=4;
+        }
+        else if(modelCount==1){
+            loadModel1();
+        }
+        else if(modelCount==2){
+            loadModel2();
+        }
+        else if(modelCount==3){
+            loadModel3();
+        }
+        else if(modelCount==4){
+            loadModel4();
+        }
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

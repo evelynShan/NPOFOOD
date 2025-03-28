@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>Title</title>
+
+    <!--引入Bootstrap--->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!--引入js--->
+
+    <script type="text/javascript" src="js/jqueryDetails.js"></script>
+
+
+    <!--引入css--->
+
+    <link rel="stylesheet" type="text/css" href="css/Details.css" />
+
+    <!--引入three.js三维引擎-->
+    <script src="libs/three.js"></script>
+    <script src="libs/OrbitControls.js"></script>
+    <script src="libs/GLTFLoader.js"></script>
+    <script src="libs/DRACOLoader.js"></script>
+
+    <!--引入skrollr.js--->
+    <script src="libs/skrollr.js"></script>
+
+    <!--引入wheelScroll.js--->
+    <script src="libs/jquery.mousewheel.js"></script>
+</head>
+<body style="height: 1100px">
+<!---网页页头-->
+<div class="Banner" >
+    <!--- <img src="src/img/LOGO.png">--->
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <!---row-eq-height设置元素等高--->
+            <div class="row row-eq-height">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner1" href="HomePage.html">#N PO FOOD</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner2"href="Products.html">#WHAT'S NEW</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" id="dropdownProduct"
+                                data-toggle="dropdown" >
+                            #PRODUCTS
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"style="background-color: rgba(0,0,0,0%);border: none;":>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details.html">.001</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details2.html">.002</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details3.html">.003</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="Details4.html">.004</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!---
+                    <a href="Details.html" id="Banner3">#PRODUCTS</a>
+                    --->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <embed src="src/img/Menu_Icon.png">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <a id="Banner4">#ABOUT</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<img src="src/img/Gradient_BackGround.png" class="backgroundPic1">
+<div class="Content" style="margin-right:10px;margin-left: 10px">
+    <div class="cover">
+        <div>
+            <!----
+            <img src="src/img/Elements1/GIVEUPGENERATION.png" style="height:20%;margin: auto;margin-left:3%;">--->
+           <!----- <input class="giveUpGeneration" type="button">--->
+        </div>
+        <div>
+            <img src="src/img/Elements1/N%20PO%20FOOD.png" style="height:2%;margin: auto;margin-bottom:8%;">
+        </div>
+
+
+    </div>
+</div>
+
+<div class="detailContent">
+
+    <div class="row"style="height:10%;position: fixed;top:70%;right:10%;z-index:1000  ">
+        <div class="col-2"style="padding: 0px;height: 100%;">
+            <div style="display: flex;height: 100%;">
+                <input type="button" class="productDetail" onclick="window.location.href='Details3.html'">
+            </div>
+        </div>
+
+        <div class="col-2" style="padding:0px;font-family: ChillPixels-Matrix;height: 100%;" >
+            <div style="display: flex;height: 100%">
+                <a style="margin: auto;margin-left: 5%;"href="Details3.html">PRODUCT INTRODUCTION</a>
+            </div>
+        </div>
+    </div>
+    <input class="giveUpGeneration" type="button"style="position: fixed;height: 25%">
+        <!--产品1-->
+        <div class="row" data-0="opacity:1;transform:translateY(15%);width:100%;height:100%"data-250="opacity:1;transform:translateY(30%);"style="position: absolute">
+            <!--文字描述-->
+
+            <div class="col-3" style="top:-5%">
+                <div class="productWords" style="margin-left: auto;margin-right: auto;width:120%;">
+                    <div class="textTitle" style="opacity:0;" data-0="opacity:1;transform:translateX(200px)"data-20="opacity:1;transform:translateX(350px)"data-200="opacity:1;transform:translateX(350px)"data-220="opacity:1;transform:translateX(200px)">
+                        <h1>TWISTER MACHINE</h1>
+                    </div>
+
+                    <!--总介绍--->
+                    <div class="textTitle" style="opacity:0; " data-20="opacity:0;transform:translateX(100px)"data-50="opacity:1;transform:translateX(350px)"data-200="opacity:1;transform:translateX(350px)"data-230="opacity:0;transform:translateX(100px)">
+                        <p>A replica of the retro bubble gum twister machine, each time the user turns the button, two pills fall, one to make you feel full and one to maintain the feeling of chewing your food.
+                        </p>
+                    </div>
+
+                    <!--介绍扭蛋机结构--->
+                    <div class="textTitle" style="opacity:0; " data-50="opacity:0;transform:translateX(100px)"data-80="opacity:1;transform:translateX(350px)"data-100="opacity:1;transform:translateX(350px)"data-130="opacity:0;transform:translateX(100px)">
+                        <p>· A retro bubble gum machine with two compartments</p>
+                    </div>
+
+                    <!--旋转扭蛋按钮--->
+                    <div class="textTitle" style="opacity:0; " data-70="opacity:0;transform:translateX(100px)"data-100="opacity:1;transform:translateX(350px)"data-150="opacity:1;transform:translateX(350px)"data-180="opacity:0;transform:translateX(100px)">
+                        <p>· When the user wants to eat, they can turn the button</p>
+                    </div>
+
+                    <!--介绍药丸--->
+                    <div class="textTitle" style="opacity:0; " data-120="opacity:0;transform:translateX(100px)"data-150="opacity:1;transform:translateX(350px)"data-180="opacity:1;transform:translateX(350px)"data-210="opacity:0;transform:translateX(100px)">
+                        <p>· Two pills will drop at once, eaten separately, to keep you full</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--产品描述图-->
+            <div class="col-9 detailContainer"style="position: relative;top: -10%;">
+                <div data-anchor-target=".detailContainer"data-0="opacity:1;transform:translateY(0%);" data-150="opacity:0;transform:translateY(0%);"style="position:absolute;z-index: 3">
+                    <img  src="src/img/Products/Product3/Machine1.png">
+                </div>
+
+                <div data-anchor-target=".detailContainer"data-0="transform:translateY(0%);opacity:0;" data-150="transform:translateY(0%);opacity:1;"style="position:absolute;z-index: 2">
+                    <img src="src/img/Products/Product3/Machine2.png">
+                </div>
+                <div data-anchor-target=".detailContainer"data-0="transform:translateY(0%);opacity:0;" data-150="transform:translateY(5%);opacity:1;"style="position:absolute;z-index: 4">
+                    <img src="src/img/Products/Product3/Medicine.png">
+                </div>
+
+            </div>
+        </div>
+        <!--产品2-->
+        <div class="row" data-0="opacity:1;transform:translateY(80%);"data-650="opacity:1;transform:translateY(100%);" data-1750="opacity:1;transform:translateY(190%);">
+            <!--产品描述图--->
+            <div class="col-6 detailContainer"style="position: relative">
+                <!--营养结构--->
+                <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(30%);"style="position:absolute;z-index: 1">
+                    <img  src="src/img/Products/Product3/Sponge1.1.png" style="z-index:1;width:100%;height:100%">
+                </div>
+                <!--网状结构--->
+                <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(20%);transform:translateX(0%);width:140%;"data-1250="transform:translateX(20%);"style="position:absolute;z-index: 2">
+                    <img src="src/img/Products/Product3/Sponge1.2.png"style="z-index:2">
+                </div>
+                <!--海绵--->
+                <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(20%);transform:translateX(0%);width:140%;"data-1250="transform:translateX(20%);"data-1450="transform:translateX(60%);"style="position:absolute;z-index: 3">
+                    <img src="src/img/Products/Product3/Sponge1.3.png"style="z-index:3">
+                </div>
+                <!--糖衣--->
+                <div data-anchor-target=".detailContainer"data-950="transform:translateX(0%);width:100%;opacity:1;" data-1050="transform:translateX(20%);opacity:0;"style="position:absolute;z-index: 4">
+                    <img src="src/img/Products/Product3/Sponge1.4.png"style="z-index:4">
+                </div>
+
+            </div>
+            <!--文字描述--->
+            <div class="col-6">
+                <div class="productWords" style="margin-left: auto;margin-right: auto;width:180%;">
+                    <div class="textTitle" style="opacity:0;" data-820="opacity:1;transform:translate(0px,0px)"data-850="opacity:1;transform:translate(-200px,0px);"data-880="opacity:1;transform:translate(-200px,-50px);">
+                        <h1>Satiety Pill</h1>
+                    </div>
+                    <!--总介绍--->
+                    <div class="textTitle" style="opacity:0; " data-820="opacity:0;transform:translate(0px,0px);"data-850="opacity:1;transform:translate(-500px,-50px)">
+                        <p>They rise up in your stomach and keep you feeling full for five hours, so you don't feel hungry all the time
+                        </p>
+                    </div>
+                    <!---第一层-->
+                    <div class="textTitle" style="opacity:0; " data-850="opacity:0;transform:translate(0px,0px);"data-855="opacity:1;transform:translate(-500px,-50px);display:block;"data-1080="opacity:0;transform:translate(-500px,-50px);display:none;">
+                        <p>First layer: sugar coating, which melts quickly after swallowing</p>
+                    </div>
+                    <!---第二层-->
+                    <div class="textTitle" style="opacity:0; " data-1080="opacity:0;transform:translate(0px,0px);"data-1180="opacity:1;transform:translate(-500px,-50px);display:block;"data-1350="opacity:0;transform:translate(-500px,-50px);display:none;">
+                        <p>Layer 2: Protective rim, elastic and prevents the sponge-like structure from becoming rough on the surface as it grows</p>
+                    </div>
+                    <!---第三层-->
+                    <div class="textTitle" style="opacity:0; " data-1350="opacity:0;transform:translate(0px,0px);"data-1450="opacity:1;transform:translate(-500px,-50px);display:block;"data-1550="opacity:0;transform:translate(-500px,-50px);display:none;">
+                        <p>Layer 3: sponge-like balls that will slowly grow to make you feel full and then slowly dissolve</p>
+                    </div>
+                    <!---第四层-->
+                    <div class="textTitle" style="opacity:0; " data-1550="opacity:0;transform:translate(0px,0px);"data-1650="opacity:1;transform:translate(-500px,-50px);display:block;"data-1750="opacity:0;transform:translate(-500px,-50px);display:none;">
+                        <p>Layer 4: Nutrients, even if you don't eat, you can still meet your normal nutritional needs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="row" data-0="opacity:1;transform:translateY(60%);" data-850="opacity:1;transform:translateY(60%);"data-1050="opacity:1;transform:translateY(70%);">
+        <div class="col-6 detailContainer"style="position: relative">
+            <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(30%);"style="position:absolute;z-index: 1">
+                <img  src="src/img/Products/Product3/Bubble4.png" style="z-index:1;width:100%;height:100%">
+            </div>
+
+            <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(20%);transform:translateX(0%);width:140%;"data-1250="transform:translateX(20%);"style="position:absolute;z-index: 2">
+                <img src="src/img/Products/Product3/Bubble3.png"style="z-index:2">
+            </div>
+            <div data-anchor-target=".detailContainer"data-850="transform:translateY(0%);width:100%;" data-1050="transform:translateY(20%);transform:translateX(0%);width:140%;"data-1250="transform:translateX(20%);"data-1450="transform:translateX(60%);"style="position:absolute;z-index: 3">
+                <img src="src/img/Products/Product3/Bubble2.png"style="z-index:3">
+            </div>
+            <div data-anchor-target=".detailContainer"data-950="transform:translateX(0%);width:100%;opacity:1;" data-1050="transform:translateX(20%);opacity:0;"style="position:absolute;z-index: 4">
+                <img src="src/img/Products/Product3/Bubble1.png"style="z-index:4">
+            </div>
+
+        </div>
+        <div class="col-6">
+            <p>nihaonihaonia</p>
+        </div>
+    </div>
+-->
+        <!--产品3-->
+        <div class="row" data-0="opacity:1;transform:translateY(210%);"data-1750="opacity:1;transform:translateY(230%);"data-2550="opacity:1;transform:translateY(250%);"data-2750="opacity:1;transform:translateY(260%);"style="position: absolute">
+        <div class="col-4">
+            <div class="productWords" style="margin-left: auto;margin-right: auto;width:180%;">
+                <div class="textTitle" style="opacity:0;" data-2220="opacity:1;transform:translate(500px,0px)"data-2250="opacity:1;transform:translate(800px,0px);"data-2260="opacity:1;transform:translate(700px,-50px);">
+                    <h1>Gum</h1>
+                </div>
+                <!--总介绍--->
+                <div class="textTitle" style="opacity:0; " data-2260="opacity:0;transform:translate(0px,0px);"data-2300="opacity:1;transform:translate(500px,-50px)"data-2610="opacity:1;transform:translate(500px,-50px)"data-2640="opacity:0;transform:translate(0px,0px)">
+                    <p>Served with a satiety pill, it allows you to simulate eating all the time without worrying about over-consumption of calories</p>
+                </div>
+                <!--第一层--->
+                <div class="textTitle" style="opacity:0; " data-2270="opacity:0;transform:translate(0px,0px);"data-2300="opacity:1;transform:translate(500px,-50px)"data-2550="opacity:1;transform:translate(500px,-50px)"data-2580="opacity:0;transform:translate(0px,0px)">
+                    <p>· The bubble gum is made from non-toxic resin and tastes like real food</p>
+                </div>
+                <!--第二层--->
+                <div class="textTitle" style="opacity:0; " data-2300="opacity:0;transform:translate(0px,0px);"data-2330="opacity:1;transform:translate(500px,-50px)"data-2580="opacity:1;transform:translate(500px,-50px)"data-2610="opacity:0;transform:translate(0px,0px)">
+                    <p>· You can customise your bubble gum to match your favourite foods</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-8 detailContainer"style="position: relative">
+            <div data-anchor-target=".detailContainer"data-2350="transform:translateX(0%);" data-2550="transform:translateX(0%);"style="position:absolute;z-index: 1">
+                <img  src="src/img/Products/Product3/Bubble4.png">
+            </div>
+
+            <div data-anchor-target=".detailContainer"data-2350="transform:translateX(0%); " data-2550="transform:translateX(-20%); "style="position:absolute;z-index:2">
+                <img src="src/img/Products/Product3/Bubble3.png">
+            </div>
+            <div data-anchor-target=".detailContainer"data-2350="transform:translateX(0%); " data-2550="transform:translateX(-40%); "style="position:absolute;z-index:3">
+                <img src="src/img/Products/Product3/Bubble2.png">
+            </div>
+            <div data-anchor-target=".detailContainer"data-2350="transform:translateX(0%); " data-2550="transform:translateX(-60%) "style="position:absolute;z-index:4">
+                <img src="src/img/Products/Product3/Bubble1.png">
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<!--介绍界面--->
+<div class="About">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 aboutClose">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 closeIcon">
+                <img src="src/img/Menu_Icon.png">
+            </div>
+            <div class="col-lg-10 col-md-2 col-sm-2 closeButton">
+                <input type="button" value="#CLOSE">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="AboutPage">
+        <div class="AboutText">
+            <div style="position: absolute; padding: 1rem; overflow: hidden ">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+                <img src="src/img/About/AboutBack.png">
+            </div>
+            <div style="position: absolute; padding: 1.5rem">
+                <br>
+                <p class="ex2">
+                    YOU MUST GIVE UP N IN THIS GENERATION
+                </p>
+                <br>
+                <p class="ex3">
+                    STARTING IN 2020, THE TERM 'INVOLUTION' STARTED TO BECOME POPULAR ACROSS CHINA, WITH PEOPLE SEEMINGLY WRAPPED UP IN A MEANINGLESS ROLE OF COMPETITION.</p>
+                <p class="ex3">
+                    IN ORDER TO IMPROVE THEIR COMPETITIVENESS COMPARED TO THEIR PEERS, PEOPLE ARE MORE CONCERNED THAN EVER ABOUT APPEARANCE AND BODY IMAGE, DESPERATELY STRIVING FOR HIGHER QUALIFICATIONS AND WILLINGLY WORKING LONG HOURS. TO ONE'S DISMAY, ONE'S EFFORTS ARE NO LONGER PROPORTIONAL TO WHAT ONE GETS IN RETURN, AS THERE SEEMS TO BE NO END TO SUCH MEANINGLESS EFFORTS DUE TO SOCIAL CONFLICTS THAT INDIVIDUALS CAN NOT SOLVE, SUCH AS THE GROWING GAP BETWEEN THE RICH AND THE POOR, HIGH HOUSING PRICES, AN AGING SOCIETY, AND THE PROGRESSIVELY MORE INTENSE GENDER CONFLICTS. MORE AND MORE PEOPLE ARE DEVOTING THEMSELVES TO INVOLUTION AND HAVE NO CHOICE BUT TO PUT IN THE EFFORT.</p>
+                <p class="ex3">
+                    'INVOLUTION' MAKES PEOPLE UNCONSCIOUSLY GIVE UP MANY THINGS, SUCH AS TIME FOR REST, THEIR PREFERENCES, ETC. AT THE SAME TIME, PEOPLE ARE GIVING UP A HEALTHY DIET. BECAUSE OF FOCUSING ON WORK OR STUDY, MANY PEOPLE WILL NEGLECT OR FORGET TO EAT, OR KEEP EATING IRREGULARLY; BEING IN A HIGH-PRESSURE LIFE ENVIRONMENT FOR A LONG TIME, PEOPLE TEND TO SUBCONSCIOUSLY CHOOSE FOODS HIGH IN SUGAR AND FAT, AND SECRETE DOPAMINE THROUGH EATING REWARD MECHANISM TO INCREASE THEIR EXCITEMENT; IN ORDER TO IMPROVE THEIR COMPETITIVENESS, PEOPLE START TO FOCUS ON THEIR APPEARANCE AND DRASTICALLY REDUCE THE NUMBER OF MEALS THEY EAT IN ORDER TO LOSE WEIGHT. SOME PEOPLE SUFFER FROM BULIMIA BECAUSE THEIR STOMACHS CAN NOT COPE WITH THE SUDDEN REDUCTION IN FOOD INTAKE DUE TO EXCESSIVE CUTTING.</p>
+                <p class="ex3">
+                    'N PO FOOD' IS A FOOD BRAND DESIGNED TO CATER TO PEOPLE WHO HAVE GIVEN UP HEALTHY EATING DUE TO STRESS, AND ITS PRODUCTS ARE DESIGNED TO CATER TO PEOPLE'S POOR EATING HABITS. IT IS HOPED THAT BY SEEING THE LATEST PRODUCTS FROM 'N PO FOOD', PEOPLE WILL REALIZE THE HUGE IMPACT THAT INTENSE SOCIAL PRESSURE HAS ON THEIR LIVES SO THAT THEY CAN ADJUST THEIR LIVES AND REALIZE THE IMPORTANCE OF A HEALTHY DIET.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!--Three.js Javascript代码-->
+
+
+
+<!--Skrollr.js Javascript代码-->
+<script>
+    skrollr.init(
+        {forceHeight: false}
+    )
+</script>
+
+</body>
+</html>
