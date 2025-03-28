@@ -1,0 +1,451 @@
+@font-face{font-family: 'ChillPixels-Matrix';src:url('../src/font/ChillPixels-Matrix.otf');}
+@font-face{font-family: 'ChillPixels-Maximal';src:url('../src/font/ChillPixels-Maximal.otf');}
+@font-face{font-family: 'ChillPixels-Minimalism';src:url('../src/font/ChillPixels-Minimalism.otf');}
+@font-face{font-family: 'ChillPixels-Mono';src:url('../src/font/ChillPixels-Mono.otf');}
+@font-face{font-family: 'LucidaGrande';src:url('../src/font/LucidaGrandeBold.ttf');}
+@font-face{font-family: 'Krungthep';src:url('../src/font/Krungthep.ttf');}
+
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.BackGround{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.backEnvironment{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#bg1{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+    background: url("../src/img/HomePage/Page1/BackGround.png") repeat 0 0;
+    z-index:1;
+
+}
+#bg2{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+    background: url("../src/img/BackGround.png") repeat 0 0;
+    z-index:0;
+}
+
+#bg3{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+    background: url("../src/img/HomePage/Products/Product1/product1Back.png") repeat 0 0;
+    background-size: 80%;
+    z-index:0;
+}
+
+#bg4{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+    background: url("../src/img/HomePage/Products/Product2/Background2.png") repeat 0 0;
+    background-size: 80%;
+    z-index:0;
+}
+
+#bg5{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+
+    background: url("../src/img/HomePage/Products/Product3/BackGround3.png") repeat 0 0;
+    background-size: 100%;
+    z-index:0;
+}
+#bg6{
+    position: absolute;
+    width:100% ;
+    height: 100%;
+    background: url("../src/img/HomePage/Products/Product4/BackGround4.png") repeat 0 0;
+    z-index:0;
+}
+#trySkrollr{
+    height: 20px;
+}
+
+#try{
+    height: 500px;
+
+}
+
+
+/*设置NavBar*/
+.row-eq-height{
+    display: flex;
+}
+.Banner{
+    position: fixed;
+    padding-left: 2rem;
+    z-index: 1000;
+}
+
+.col-sm-2,.col-lg-2,.col-md-2{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.col-sm-10,.col-lg-10,.col-md-10{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.Banner a{
+    margin: auto;
+    margin-left: 0;
+    font-size:1.2rem;
+    text-align: center;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+.Banner a:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+
+
+.Banner embed{
+    width: 100%;
+    margin: auto;
+}
+#dropdownProduct{
+    font-size:1.2rem;
+    text-align: center;
+    font-family: ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+#dropdownProduct:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+#dropdownProduct:active{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+#dropdownProduct:focus{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+/*Skrollr时差笔记*/
+.Note{
+    width: 500px;
+    height: 500px;
+}
+.Note p{
+    font-family: ChillPixels-Mono;
+    font-size: 50px;
+    color: #FF8600;
+}
+.skrollable{
+    position:absolute;
+}
+/*p元素设置*/
+/*p元素不显示*/
+p.ex1 {display: none;}
+/*p元素内容换行*/
+p.ex2 {
+    font-size: 18px;
+}
+/*p元素上下无间隙*/
+p.ex3 {
+
+    display: block;
+    font-size: 12px;
+}
+/*p元素元素内*/
+p.ex4 {
+    display: inline-block;
+}
+
+
+.About{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height:100%;
+    top: 0;
+    position: fixed;
+
+    background-color: rgba(255,255,255,100%);
+    z-index: 1000;
+    display: none;
+    font-family: ChillPixels-Mono;
+
+
+}
+.AboutPage{
+
+    background-color: rgb(247,228,213);
+    margin: auto;
+    width: 20%;
+    height:50%;
+    opacity:0;
+
+    overflow-y:  scroll;
+    overscroll-behavior: contain;
+    position: relative;
+
+}
+.AboutPage::-webkit-scrollbar{display: none}
+.AboutText{
+
+
+}
+.AboutText img{
+    width: 100%;
+    opacity: 0.7;
+    z-index: 0;
+
+}
+
+.AboutText p{
+    margin: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.aboutClose{
+    background-color: rgba(0,0,0,0%);
+    border: none;
+    left: 60%;
+    top:20%;
+    position: fixed;
+
+}
+.aboutClose row{
+
+}
+
+.closeIcon{
+display: flex;
+}
+.closeIcon img{
+    margin: auto;
+    margin-right:0;
+    width: 50%;
+}
+.closeButton{
+    display: flex;
+}
+.closeButton input{
+    margin: auto;
+    margin-left:0 ;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    font-size:1.2rem;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+}
+.closeButton input:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+
+
+/**/
+
+.icon-scroll:before{
+    border-color: #111111;
+    position: absolute;
+    left:-5%;
+}
+
+
+.icon-scroll{
+
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #111111;
+    border-radius: 25px;
+}
+
+
+.icon-scroll:before{
+
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #111111;
+    margin-left: 15px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+#scrollWords div p{
+    font-family: ChillPixels-Mono;
+    font-size: 40px;
+    color: #C46868;
+
+}
+
+@keyframes scroll{
+0%{
+    opacity: 1;
+}
+    100%{
+        opacity: 0;
+        transform: translateY(46px)
+    }
+}
+.productsPop{
+    background-repeat: no-repeat;
+    width:0.1%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+
+}
+.popUpButton{
+    transform: scale(70%);
+    text-align: center;
+    border: none;
+    width: 10%;
+    height: 10%;
+    background-repeat: no-repeat;
+    background-color:rgba(0,0,0,0);
+    background-image: url("../src/img/HomePage/Page1-2/PopUpFrameWork/x Close.png");
+    position: fixed;
+    z-index: 2;
+}
+.productsPop img{
+    z-index: 1;
+    width: 100%;
+    position: relative;
+}
+#openPopUp{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    left: 10%;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../src/img/HomePage/Page1-2/PopUpFrameWork/NewArrivals.png");
+
+}
+.product1Words{
+    width: 40%;
+    font-size: 2rem;
+    font-family: Krungthep;
+}
+.productDetail{
+
+    margin:auto;
+    margin-right: 10%;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    transform: scale(400%);
+    width: 5%;
+    background-size: 100% 100%;
+    background-image:url("../src/img/Icon/Icon_Star.png") ;
+
+}
+.productDetail:hover{
+    background-image: url("../src/img/Icon/Icon_Star_Active.png");
+    transition:all 0.2s linear 0s;
+    z-index: 100000;
+}
+.homeButton{
+    text-decoration: none;
+    color: #111111;
+}
+.homeButton:visited{
+    text-decoration: none;
+}
+.homeButton:hover{
+    text-decoration: none;
+    color:#FF8600;
+}
+.product3Wax{
+    position: fixed;
+}
+.product3Words{
+    width: 40%;
+    font-family: Krungthep;
+    font-size: 2rem;
+    position: fixed;
+    top: 40%;
+    left: 10%;
+    z-index: 50;
+}
+.product3Words p{
+    text-align: center;
+}
+.product3Geer{
+    position: fixed;
+}
+.product3Money{
+    position: absolute;
+}
+.product3Money img{
+    position: relative;
+    top:0;
+}
+
+
+.product2Words{
+    width: 45%;
+    text-align: center;
+    font-family: Krungthep;
+    font-size: 2rem;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: 50;
+}
+#backToAdver{
+    margin: auto;
+    border: none;
+    width: 8rem;
+    height:6rem;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../src/img/Elements1/backProducts1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#backToAdver:active{
+    transition:all 0.2s linear 0s;
+    background-image: url("../src/img/Elements1/backProducts2.png");
+}
+#backToAdver:hover{
+
+    background-image: url("../src/img/Elements1/backProducts2.png");
+}
+#backToAdver row p {
+    font-size: 10px;
+
+}
+#BackAdverWord{
+    margin: auto;
+    font-family: 'Chill Pixels';
+    font-size: 3rem
+}

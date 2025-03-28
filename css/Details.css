@@ -1,0 +1,380 @@
+@font-face{font-family: 'ChillPixels-Matrix';src:url('../src/font/ChillPixels-Matrix.otf');}
+@font-face{font-family: 'ChillPixels-Maximal';src:url('../src/font/ChillPixels-Maximal.otf');}
+@font-face{font-family: 'ChillPixels-Minimalism';src:url('../src/font/ChillPixels-Minimalism.otf');}
+@font-face{font-family: 'ChillPixels-Mono';src:url('../src/font/ChillPixels-Mono.otf');}
+@font-face{font-family: 'LucidaGrande';src:url('../src/font/LucidaGrandeBold.ttf');}
+@font-face{font-family: 'Krungthep';src:url('../src/font/Krungthep.ttf');}
+.owl-carousel {
+    -ms-touch-action: none;
+    touch-action: none;
+}
+{
+    touch-action: none;
+}
+
+body{
+    background-image: url("../src/img/BackGround.png");
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y:auto;
+    margin:0;
+}
+.productWords{
+    width: 70%;
+    text-align: justify;
+}
+
+.productWords h1 {
+    font-family: LucidaGrande;
+}
+.productWords h2 {
+    font-family: LucidaGrande;
+}
+.productWords p{
+    font-family: LucidaGrande;
+    font-size: 1.2rem;
+}
+
+.backgroundPic1{
+    opacity: 0.25;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.Elements{
+    display: flex;
+    padding: 0;
+
+}
+.Elements img{
+    width:2%;
+    height: 90%;
+    margin: auto;
+    margin-right:15%;
+
+}
+/*p元素设置*/
+/*p元素不显示*/
+p.ex1 {display: none;}
+/*p元素内容换行*/
+p.ex2 {
+    font-size: 18px;
+}
+/*p元素上下无间隙*/
+p.ex3 {
+
+    display: block;
+    font-size: 12px;
+}
+/*p元素元素内*/
+p.ex4 {
+    display: inline-block;
+}
+
+.cover div{
+    width:100%;
+    height:100%;
+    position: fixed;
+    display: flex;
+    z-index:0;
+
+}
+.cover img{
+    margin: auto;
+}
+.cover h5{
+    font-family: ChillPixels-Mono;
+
+}
+#Product1{
+    color: #111111;
+    height: 50%;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    background-image: url("../src/img/Elements1/COMPONENT1.png");
+    background-size:100%,100%;
+    background-repeat: no-repeat;
+
+}
+
+#Product2{
+    height: 50%;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    background-image: url("../src/img/Elements1/COMPONENT2.png");
+    background-size:100%,100%;
+    background-repeat: no-repeat;
+}
+
+/*Banner*/
+.row-eq-height{
+    display: flex;
+}
+.Banner{
+    padding-left: 2rem;
+    width: 100%;
+
+}
+
+.col-sm-2,.col-lg-2,.col-md-2{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.col-sm-10,.col-lg-10,.col-md-10{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.Banner a{
+    margin: auto;
+    margin-left: 0;
+    font-size:1.2rem;
+    text-align: center;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+.Banner a:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+
+
+.Banner embed{
+    width: 100%;
+    margin: auto;
+}
+#dropdownProduct{
+    font-size:1.2rem;
+    text-align: center;
+    font-family: ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+#dropdownProduct:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+#dropdownProduct:active{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+#dropdownProduct:focus{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+
+
+
+.About{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height:100%;
+    top: 0;
+    position: fixed;
+
+    background-color: rgba(255,255,255,50%);
+    z-index: 1000;
+    display: none;
+    font-family: ChillPixels-Mono;
+
+
+}
+.AboutPage{
+
+    background-color: rgb(247,228,213);
+    margin: auto;
+    width: 20%;
+    height:50%;
+    opacity:0;
+
+    overflow-y:  scroll;
+    overscroll-behavior: contain;
+    position: relative;
+
+}
+.AboutPage::-webkit-scrollbar{display: none}
+.AboutText{
+
+
+}
+.AboutText img{
+    width: 100%;
+    opacity: 0.7;
+    z-index: 0;
+
+}
+
+.AboutText p{
+    margin: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.aboutClose{
+    background-color: rgba(0,0,0,0%);
+    border: none;
+    left: 60%;
+    top:20%;
+    position: fixed;
+
+}
+.aboutClose row{
+
+}
+
+.closeIcon{
+    display: flex;
+}
+.closeIcon img{
+    margin: auto;
+    margin-right:0;
+    width: 50%;
+}
+.closeButton{
+    display: flex;
+}
+.closeButton input{
+    margin: auto;
+    margin-left:0 ;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    font-size:1.2rem;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+}
+.closeButton input:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+
+#Product1:hover{
+    background-image: url("../src/img/Elements1/COMPONENT1.2.png");
+    transition:all 0.2s linear 0s;
+}
+#Product2:hover{
+    background-image: url("../src/img/Elements1/COMPONENT2.2.png");
+    transition:all 0.2s linear 0s;
+}
+
+.productRotate{
+
+    margin:auto;
+    margin-right: 0%;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    width: 40%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-image:url("../src/img/Icon/Rotate_Icon1.png") ;
+
+}
+.productRotate:hover{
+    background-image: url("../src/img/Icon/Rotate_Icon2.png");
+    transition:all 0.2s linear 0s;
+    z-index: 100000;
+}
+
+
+
+
+.productDetail{
+
+    margin:auto;
+    margin-right: 0%;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    width: 30%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-image:url("../src/img/Icon/Icon_Star.png") ;
+
+}
+.productDetail:hover{
+    background-image: url("../src/img/Icon/Icon_Star_Active.png");
+    transition:all 0.2s linear 0s;
+    z-index: 100000;
+}
+
+.detailContent{
+    padding-top: 15%;
+    position:relative;
+    height: 100%;
+    display: flex;
+
+}
+.detailContent .row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    top:0;
+}
+.detailContent .row .col-6{
+    display: flex;
+}
+.detailContent .row .col-6 p{
+    margin: auto;
+}
+
+.detailContent img{
+    margin: auto;
+    width:100%;
+}
+#canvasRenderRow{
+
+}
+.product4Pics{
+
+
+}
+/*
+.giveUpGeneration{
+    z-index: 10;
+    position: fixed;
+    top: 40%;
+    left: 3%;
+    border: none;
+    width: 1%;
+    height: 50%;
+    background-color: rgba(0,0,0,0%);
+    background-image: url("../src/img/Elements1/GIVEUPGENERATION.png");
+    background-size: 2.5%;
+    background-repeat: no-repeat;
+}
+*/
+
+
+.giveUpGeneration{
+    z-index: 10;
+    position: fixed;
+    top: 35%;
+    left: 3%;
+    border: none;
+    width: 5%;
+    height: 50%;
+    background-color: rgba(0,0,0,0%);
+    background-image: url("../src/img/Elements1/GIVEUPGENERATION.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+a{
+    color:#111111;
+    text-decoration-line: none;
+    text-decoration: none;
+}
+a:hover{
+    color: #FF8600;
+}
+#productRotateWord:hover{
+    color: #FF8600;
+}

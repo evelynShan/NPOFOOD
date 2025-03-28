@@ -1,0 +1,349 @@
+@font-face{font-family: 'ChillPixels-Matrix';src:url('../src/font/ChillPixels-Matrix.otf');}
+@font-face{font-family: 'ChillPixels-Maximal';src:url('../src/font/ChillPixels-Maximal.otf');}
+@font-face{font-family: 'ChillPixels-Minimalism';src:url('../src/font/ChillPixels-Minimalism.otf');}
+@font-face{font-family: 'ChillPixels-Mono';src:url('../src/font/ChillPixels-Mono.otf');}
+@font-face{font-family: 'LucidaGrande';src:url('../src/font/LucidaGrandeBold.ttf');}
+@font-face{font-family: 'Krungthep';src:url('../src/font/Krungthep.ttf');}
+/*主题背景*/
+body{
+    background-image: url("../src/img/BackGround.png");
+
+    width: 100%;
+    overflow:hidden;
+    margin:0;
+}
+/*p元素设置*/
+/*p元素不显示*/
+p.ex1 {display: none;}
+/*p元素内容换行*/
+p.ex2 {
+    font-size: 18px;
+}
+/*p元素上下无间隙*/
+p.ex3 {
+
+    display: block;
+    font-size: 12px;
+}
+/*p元素元素内*/
+p.ex4 {
+    display: inline-block;
+}
+
+/*Banner*/
+.row-eq-height{
+    display: flex;
+}
+.Banner{
+padding-left: 2rem;
+}
+
+.col-sm-2,.col-lg-2,.col-md-2{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.col-sm-10,.col-lg-10,.col-md-10{
+    padding-right: 0px;
+    padding-left: 0px;
+    display: flex;
+}
+.Banner a{
+    margin: auto;
+    margin-left: 0;
+    font-size:1.2rem;
+    text-align: center;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+.Banner a:hover{
+    font-size:1.2rem;
+
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+
+
+.Banner embed{
+width: 100%;
+margin: auto;
+}
+#dropdownProduct{
+    font-size:1.2rem;
+    text-align: center;
+    font-family: ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+    text-decoration-line: none;
+}
+#dropdownProduct:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
+#dropdownProduct:active{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+#dropdownProduct:focus{
+    outline:0;
+    box-shadow: rgba(0,0,0,0%);
+}
+.changeModel{
+
+
+}
+
+.row2{
+    margin-left: 10px;
+}
+#lastModel{
+    float: left;
+    border: none;
+    width: 10rem;
+    height: 10rem;
+    background-color: rgba(0,0,0,0%);
+    background-repeat: no-repeat;
+    background-image: url("../src/img/Button_Last.png");
+
+}
+#nextModel{
+
+    float: right;
+    border: none;
+    width: 10rem;
+    height: 10rem;
+    background-color: rgba(0,0,0,0%);
+    background-repeat: no-repeat;
+    background-image: url("../src/img/Button_Next.png");
+
+}
+/*
+.Banner img{
+
+    margin: 0;
+    padding: 1rem;
+    height:20%;
+    width: 20%;
+}
+*/
+
+
+/*
+.MenuRow{
+display: grid;
+}
+.MenuRow embed{
+    align-self: center;
+    justify-self: center;
+}
+
+*/
+
+/*渲染画布背景*/
+#canvasRender{
+
+}
+#canvasRenderRow {
+    background-image: url("../src/img/BackGround-Pic1.png");
+    background-size: 50%;
+    background-repeat:repeat-x;
+    display: flex;
+}
+
+
+/*底部轮播文字*/
+.bottomWords{
+    width: 100%;
+    bottom: 5%;
+    position: fixed;
+    text-align: center;
+}
+#scrollLeftBox{
+    border-style: none;
+    background-color: rgba(0,0,0,0%);
+    color: #111111;
+    font-size:30px;
+    width:100%;
+    font-family: ChillPixels-Mono;
+
+}
+
+.productContent{
+    width: 80%;
+}
+.productTitle{
+    font-family:Krungthep;
+    margin-top: 1rem;
+
+
+}
+.productContent{
+    font-family:LucidaGrande;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+/*网页加载动画*/
+/* From uiverse.io by @gagan-gv */
+.spinner {
+    background-color: rgba(255,255,255,60%);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width: 100%;
+
+    font-size: 18px;
+    font-weight: 600;
+    font-family: monospace;
+
+    letter-spacing: 1em;
+    color: #111111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.spinner span {
+    text-shadow:1px 1px 8px purple;
+    animation: loading6454 1.75s ease infinite;
+    z-index: 5;
+}
+
+.spinner span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.spinner span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.spinner span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.spinner span:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.spinner span:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+.spinner span:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+.spinnerContent{
+    top:calc(50%);
+    left: calc(50%);
+}
+
+@keyframes loading6454 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.About{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height:100%;
+    top: 0;
+    position: fixed;
+
+    background-color: rgba(255,255,255,50%);
+    z-index: 1000;
+    display: none;
+    font-family: ChillPixels-Mono;
+
+
+}
+.AboutPage{
+
+    background-color: rgb(247,228,213);
+    margin: auto;
+    width: 20%;
+    height:50%;
+    opacity:0;
+
+    overflow-y:  scroll;
+    overscroll-behavior: contain;
+    position: relative;
+
+}
+.AboutPage::-webkit-scrollbar{display: none}
+.AboutText{
+
+
+}
+.AboutText img{
+    width: 100%;
+    opacity: 0.7;
+    z-index: 0;
+
+}
+
+.AboutText p{
+    margin: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.aboutClose{
+    background-color: rgba(0,0,0,0%);
+    border: none;
+    left: 60%;
+    top:20%;
+    position: fixed;
+
+}
+.aboutClose row{
+
+}
+
+.closeIcon{
+    display: flex;
+}
+.closeIcon img{
+    margin: auto;
+    margin-right:0;
+    width: 50%;
+}
+.closeButton{
+    display: flex;
+}
+.closeButton input{
+    margin: auto;
+    margin-left:0 ;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+    font-size:1.2rem;
+    font-family:ChillPixels-Matrix;
+    color: #111111;
+    transition:all 0.2s linear 0s;
+}
+.closeButton input:hover{
+    font-size:1.2rem;
+    font-family:ChillPixels-Maximal;
+    color: #FF8600;
+}
